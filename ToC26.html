@@ -3,46 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Replace this title with your name -->
-  <title>Your Name - Personal Webpage</title>
+  <meta name="description" content="CDS 303: Theory of Computation, Fall 2026">
+  <title>CDS 303: Theory of Computation</title>
 
   <style>
     /*
-      This intentionally recreates the simple, traditional academic-homepage
-      appearance of the supplied reference: serif text, blue links, a floated
-      portrait, compact headings, and long publication/course lists.
+      A clean recreation of the traditional IIT Delhi academic course-page
+      style: serif type, compact spacing, blue links and simple rules.
     */
 
     html {
-      background: #ffffff;
+      background: #fff;
     }
 
     body {
-      max-width: 1180px;
-      margin: 18px auto 60px;
+      max-width: 1120px;
+      margin: 20px auto 60px;
       padding: 0 28px;
-      background: #ffffff;
-      color: #000000;
+      background: #fff;
+      color: #202020;
       font-family: "Times New Roman", Times, serif;
-      font-size: 16px;
-      line-height: 1.24;
+      font-size: 17px;
+      line-height: 1.42;
     }
 
     h1 {
-      margin: 0 0 7px;
-      font-size: 34px;
-      line-height: 1.08;
+      margin: 0 0 10px;
+      font-size: 2em;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.45em;
+      line-height: 1.2;
+      font-weight: 700;
     }
 
     hr {
-      margin: 0 0 18px;
+      height: 1px;
+      margin: 18px 0 22px;
       border: 0;
-      border-top: 1px solid #777777;
+      border-top: 1px solid #8b8b8b;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .info-block {
+      margin-bottom: 16px;
+    }
+
+    .label {
+      display: block;
+      font-weight: 700;
+    }
+
+    .ta-list {
+      margin-top: 2px;
+    }
+
+    .ta-list div {
+      margin: 1px 0;
     }
 
     a:link {
-      color: #0000ee;
+      color: #0000cc;
       text-decoration: underline;
     }
 
@@ -55,303 +83,113 @@
       color: #cc0000;
     }
 
-    p {
-      margin: 0 0 12px;
-    }
-
-    .profile-photo {
-      float: left;
-      width: 185px;
-      height: 235px;
-      margin: 0 22px 12px 0;
-      object-fit: cover;
-    }
-
-    .contact {
-      margin-top: 13px;
-    }
-
-    .contact-title,
-    .section-title {
-      font-weight: bold;
-    }
-
-    .clear {
-      clear: both;
-    }
-
-    .section-title {
-      margin-top: 22px;
-      margin-bottom: 8px;
-      font-size: 19px;
-    }
-
-    .subsection-title {
-      margin: 13px 0 7px 18px;
-      font-weight: bold;
-    }
-
-    ul {
-      margin-top: 5px;
-      padding-left: 38px;
+    ol {
+      margin: 6px 0 18px 34px;
+      padding: 0;
     }
 
     li {
-      margin-bottom: 7px;
+      margin: 8px 0;
+      padding-left: 3px;
     }
 
-    .publication-list li {
-      margin-bottom: 12px;
+    .credits p {
+      margin-bottom: 5px;
     }
 
-    .publication-title {
-      font-weight: bold;
-    }
-
-    .publication-meta {
-      display: block;
-      margin-top: 2px;
-    }
-
-    .small-gap {
-      margin-top: 3px;
-    }
-
-    @media (max-width: 640px) {
+    @media (max-width: 650px) {
       body {
-        margin-top: 12px;
-        padding: 0 16px 40px;
+        margin-top: 14px;
+        padding: 0 18px 40px;
+        font-size: 16px;
       }
 
       h1 {
-        font-size: 30px;
+        font-size: 1.72em;
       }
 
-      .profile-photo {
-        float: none;
-        display: block;
-        width: 170px;
-        height: 216px;
-        margin: 0 0 15px;
-      }
-
-      ul {
-        padding-left: 28px;
-      }
-    }
-
-    @media print {
-      body {
-        max-width: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      a {
-        color: #000000 !important;
+      h2 {
+        font-size: 1.25em;
       }
     }
   </style>
 </head>
-
 <body>
-  <!-- =========================
-       NAME
-       ========================= -->
-  <h1>Your Name</h1>
-  <hr>
+  <main>
+    <h1>CDS 303: Theory of Computation</h1>
+    <h2>Fall 2026</h2>
 
-  <!--
-    PHOTO:
-    The embedded SVG below keeps this as one self-contained HTML file.
-    To use your own photo, replace the entire src value with:
-    src="your-photo.jpg"
-  -->
-  <img
-    class="profile-photo"
-    alt="Your portrait"
-    src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='370' height='470' viewBox='0 0 370 470'%3E%3Crect width='370' height='470' fill='%23e5e5e5'/%3E%3Ccircle cx='185' cy='155' r='78' fill='%23999999'/%3E%3Cpath d='M70 405c12-105 67-157 115-157s103 52 115 157' fill='%23999999'/%3E%3Ctext x='185' y='445' font-family='Arial' font-size='22' text-anchor='middle' fill='%23555555'%3EYOUR PHOTO%3C/text%3E%3C/svg%3E"
-  >
+    <hr>
 
-  <!-- =========================
-       BIOGRAPHY
-       ========================= -->
-  <p>
-    I am a <strong>Your Position</strong> in the
-    <a href="#">Department of Your Department</a> at
-    <a href="#">Your University or Institute</a>.
-    My main interests are in your primary research area, with a particular
-    focus on the topics and problems you study.
-  </p>
+    <div class="info-block">
+      <span class="label">Lectures by:</span>
+      <a href="https://sbjana.github.io/">Satyabrata Jana</a>.
+    </div>
 
-  <p>
-    Before joining my present institution, I worked or studied at
-    <a href="#">Previous Institution One</a> and
-    <a href="#">Previous Institution Two</a>.
-    I completed my degree at <a href="#">Degree Institution</a>, where I was
-    advised by <a href="#">Advisor Name</a>.
-  </p>
+    <div class="info-block">
+      <span class="label">Time of the class:</span>
+      Tuesdays, Thursdays and Fridays 11:00am to 11:50pm.
+    </div>
 
-  <p>
-    My current work includes a short description of your research programme,
-    methods, applications, and collaborations. Replace this paragraph with a
-    concise academic biography of approximately four to eight sentences.
-    You can find my <a href="cv.pdf">CV here</a>,
-    my <a href="#">Google Scholar page here</a>, and my
-    <a href="#">DBLP or ORCID profile here</a>.
-  </p>
+    <div class="info-block">
+      <span class="label">Office hours:</span>
+      By email appointment.
+    </div>
 
-  <!-- =========================
-       CONTACT
-       ========================= -->
-  <div class="contact">
-    <div class="contact-title">Contact:</div>
-    &nbsp; Department of Your Department<br>
-    &nbsp; Your University or Institute<br>
-    &nbsp; Street / Campus Address<br>
-    &nbsp; City, Postal Code<br>
-    &nbsp; Country<br>
-    &nbsp; Room: Your Office Number<br>
-    &nbsp; e-mail: yourname [at] university [dot] edu
-  </div>
+   
 
-  <div class="clear"></div>
+    <div class="info-block">
+      <span class="label">Tutorials:</span>
+      On Mondays, Tuesdays, Thursdays and Fridays in LH611 (depending on your group).
+    </div>
 
-  <!-- =========================
-       TEACHING
-       ========================= -->
-  <div class="section-title">Teaching:</div>
-  <ul>
-    <li>
-      <a href="#">Course Title One</a>, Spring 2026, Your University.
-    </li>
-    <li>
-      <a href="#">Course Title Two</a>, Autumn 2025, Your University.
-    </li>
-    <li>
-      Course Title Three, Spring 2025, taught with
-      <a href="#">Co-instructor Name</a>.
-    </li>
-    <li>
-      Course Title Four, Autumn 2024, Your University.
-    </li>
-    <li>
-      Course Title Five, Spring 2024, Your University.
-    </li>
-  </ul>
+ 
 
-  <!-- =========================
-       RESEARCH
-       ========================= -->
-  <div class="section-title">Research:</div>
+    <div class="info-block">
+      <span class="label">Course Material:</span>
+    </div>
 
-  <div class="subsection-title">&ensp; In Journals</div>
-  <ul class="publication-list">
-    <li>
-      <span class="publication-title">
-        <a href="#">Title of Your Journal Paper</a>
-      </span>
-      <span class="publication-meta">
-        with Coauthor One, Coauthor Two, and Coauthor Three
-      </span>
-      <span class="publication-meta">
-        in <em>Journal Name</em>, Volume 00(0), Pages 1-25 (2026).
-        [<a href="#">link</a>] [<a href="#">preprint</a>]
-      </span>
-    </li>
+    <ol>
+      <li>
+        <em>Algorithms</em> by Jeff Erickson [JE]: The book is freely available
+        <a href="https://jeffe.cs.illinois.edu/teaching/algorithms/">here</a> and can turn out to be
+        a joyful read even for those who want to learn the subject on their own.
+      </li>
+      <li>
+        <em>Introduction to Algorithms</em> (PHI) by Cormen, Leiserson, Rivest, and Stein [CLRS].
+      </li>
+    </ol>
 
-    <li>
-      <span class="publication-title">
-        <a href="#">Another Journal Article Title</a>
-      </span>
-      <span class="publication-meta">
-        with Coauthor One and Coauthor Two
-      </span>
-      <span class="publication-meta">
-        in <em>Another Journal</em>, Volume 00, Pages 100-125 (2025).
-        [<a href="#">link</a>] [<a href="#">preprint</a>]
-      </span>
-    </li>
+    <div class="info-block credits">
+      <span class="label">Credits:</span>
+      <p>The course will be evaluated on a 100-point scale.</p>
+      <p>The minor and major will be worth 30 and 40 points respectively.</p>
+      <p>The quizzes and assignments will be worth 30 points.</p>
+      <p>
+        To audit-pass the course, you need to have at least 40 points, at least 30 of which
+        should come from the minor and major.
+      </p>
+    </div>
 
-    <li>
-      <span class="publication-title">
-        <a href="#">A Third Research Article</a>
-      </span>
-      <span class="publication-meta">
-        with Coauthor Name
-      </span>
-      <span class="publication-meta">
-        in <em>Research Journal</em> (2024).
-        [<a href="#">link</a>] [<a href="#">pdf</a>]
-      </span>
-    </li>
-  </ul>
+    <hr>
 
-  <div class="subsection-title">&ensp; In Conferences</div>
-  <ul class="publication-list">
-    <li>
-      <span class="publication-title">
-        <a href="#">Title of Your Conference Paper</a>
-      </span>
-      <span class="publication-meta">
-        with Coauthor One and Coauthor Two
-      </span>
-      <span class="publication-meta">
-        in Full Name of Conference (CONFERENCE), 2026.
-        [<a href="#">pdf</a>] [<a href="#">slides</a>]
-      </span>
-    </li>
+     <div class="info-block">
+      <span class="label">Course Material:</span>
+    </div>
 
-    <li>
-      <span class="publication-title">
-        <a href="#">Another Conference Publication</a>
-      </span>
-      <span class="publication-meta">
-        with Coauthor One, Coauthor Two, and Coauthor Three
-      </span>
-      <span class="publication-meta">
-        in Another International Conference (AIC), 2025.
-        [<a href="#">pdf</a>]
-      </span>
-    </li>
+    <ul>
+      <li>
+        <em>Algorithms</em> by Jeff Erickson [JE]: The book is freely available
+        <a href="https://jeffe.cs.illinois.edu/teaching/algorithms/">here</a> and can turn out to be
+        a joyful read even for those who want to learn the subject on their own.
+      </li>
+      <li>
+        <em>Introduction to Algorithms</em> (PHI) by Cormen, Leiserson, Rivest, and Stein [CLRS].
+      </li>
+    </ul>
 
-    <li>
-      <span class="publication-title">
-        <a href="#">Earlier Conference Paper</a>
-      </span>
-      <span class="publication-meta">
-        with Coauthor Name
-      </span>
-      <span class="publication-meta">
-        in Symposium Name (SN), 2024.
-        [<a href="#">pdf</a>] [<a href="#">arXiv</a>]
-      </span>
-    </li>
-  </ul>
-
-  <div class="subsection-title">&ensp; Theses</div>
-  <ul class="publication-list">
-    <li>
-      <span class="publication-title">
-        <a href="#">Title of Your PhD Thesis</a>
-      </span>
-      <span class="publication-meta">PhD thesis, University Name, 2024. [<a href="#">pdf</a>]</span>
-    </li>
-    <li>
-      <span class="publication-title">
-        <a href="#">Title of Your Master's Thesis</a>
-      </span>
-      <span class="publication-meta">Master's thesis, University Name, 2020. [<a href="#">pdf</a>]</span>
-    </li>
-  </ul>
-
-  <!--
-    EDITING CHECKLIST
-    1. Replace every "Your ..." placeholder.
-    2. Replace # links with real URLs.
-    3. Replace the embedded placeholder portrait with your photo.
-    4. Add or remove teaching/publication <li> blocks.
-    5. Save this file as index.html before uploading to GitHub Pages.
-  -->
+     <hr>
+    
+  </main>
 </body>
 </html>
