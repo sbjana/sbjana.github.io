@@ -13,6 +13,7 @@
   <style>
     html {
       background-color: #fffaf0;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -26,10 +27,56 @@
       line-height: 1.28;
     }
 
+    /*
+      Name and navigation tabs
+    */
+
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 7px;
+    }
+
     h1 {
-      margin: 0 0 7px;
+      margin: 0;
       font-size: 34px;
       line-height: 1.08;
+      white-space: nowrap;
+    }
+
+    .top-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .top-navigation a:link,
+    .top-navigation a:visited {
+      display: inline-block;
+      padding: 6px 13px;
+      border: 1px solid #888888;
+      border-radius: 5px;
+      background-color: #f7f0e3;
+      color: #222222;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .top-navigation a:hover,
+    .top-navigation a:focus {
+      border-color: #555555;
+      background-color: #ddd2bd;
+      color: #000000;
+      text-decoration: none;
     }
 
     hr {
@@ -57,7 +104,7 @@
     }
 
     /*
-      Top profile section
+      Photograph and professional information
     */
 
     .profile-section {
@@ -87,12 +134,12 @@
     }
 
     .affiliation-block {
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     .contact-block {
       width: fit-content;
-      min-width: 330px;
+      min-width: 350px;
       margin-top: 25px;
       padding-top: 13px;
       border-top: 1px solid #bbb3a5;
@@ -102,18 +149,22 @@
     .contact-row {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .contact-label {
       display: inline-block;
-      min-width: 65px;
+      min-width: 68px;
       font-weight: bold;
     }
 
     /*
       General sections
     */
+
+    .page-section {
+      scroll-margin-top: 20px;
+    }
 
     .section-title {
       margin-top: 22px;
@@ -166,14 +217,31 @@
       Mobile layout
     */
 
-    @media (max-width: 640px) {
+    @media (max-width: 760px) {
       body {
         margin-top: 12px;
         padding: 0 16px 40px;
       }
 
+      .top-header {
+        display: block;
+      }
+
       h1 {
+        margin-bottom: 14px;
         font-size: 30px;
+        white-space: normal;
+      }
+
+      .top-navigation {
+        justify-content: flex-start;
+        margin-bottom: 12px;
+      }
+
+      .top-navigation a:link,
+      .top-navigation a:visited {
+        padding: 5px 10px;
+        font-size: 14px;
       }
 
       .profile-section {
@@ -229,6 +297,10 @@
         padding: 0;
       }
 
+      .top-navigation {
+        display: none;
+      }
+
       a {
         color: #000000 !important;
       }
@@ -238,10 +310,25 @@
 
 <body>
 
-  <h1>Satyabrata Jana</h1>
+  <!-- Name and navigation -->
+
+  <div class="top-header">
+
+    <h1>Satyabrata Jana</h1>
+
+    <nav class="top-navigation" aria-label="Main navigation">
+      <a href="#positions">Positions</a>
+      <a href="#education">Education</a>
+      <a href="#interests">Research Interests</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#research">Research</a>
+    </nav>
+
+  </div>
+
   <hr>
 
-  <!-- Profile photograph and professional information -->
+  <!-- Photograph and professional information -->
 
   <div class="profile-section">
 
@@ -253,7 +340,9 @@
 
     <div class="profile-information">
 
-      <div class="information-heading">Affiliation</div>
+      <div class="information-heading">
+        Affiliation
+      </div>
 
       <div class="affiliation-block">
         Assistant Professor<br>
@@ -311,233 +400,253 @@
 
   <!-- Current and past positions -->
 
-  <div class="section-title">
-    Current and Past Positions:
-  </div>
+  <section id="positions" class="page-section">
 
-  <ul class="position-list">
+    <div class="section-title">
+      Current and Past Positions:
+    </div>
 
-    <li>
-      <span class="position-date">
-        Since June 2026
-      </span>
+    <ul class="position-list">
 
-      Professor at the
+      <li>
+        <span class="position-date">
+          Since June 2026
+        </span>
 
-      <a href="#">
-        Department of Computer Science
-      </a>,
+        Professor at the
 
-      <a href="#">
-        University of Warwick
-      </a>,
+        <a href="#">
+          Department of Computer Science
+        </a>,
 
-      UK.
-    </li>
+        <a href="#">
+          University of Warwick
+        </a>,
 
-    <li>
-      <span class="position-date">
-        July 2024 – May 2026
-      </span>
+        UK.
+      </li>
 
-      Assistant Professor at the
+      <li>
+        <span class="position-date">
+          July 2024 – May 2026
+        </span>
 
-      <a href="#">
-        Department of Computer Science
-      </a>,
+        Assistant Professor at the
 
-      <a href="#">
-        University Name
-      </a>,
+        <a href="#">
+          Department of Computer Science
+        </a>,
 
-      Country.
-    </li>
+        <a href="#">
+          University Name
+        </a>,
 
-    <li>
-      <span class="position-date">
-        August 2022 – June 2024
-      </span>
+        Country.
+      </li>
 
-      Postdoctoral Researcher at
+      <li>
+        <span class="position-date">
+          August 2022 – June 2024
+        </span>
 
-      <a href="#">
-        Institution Name
-      </a>,
+        Postdoctoral Researcher at
 
-      Country.
-    </li>
+        <a href="#">
+          Institution Name
+        </a>,
 
-  </ul>
+        Country.
+      </li>
+
+    </ul>
+
+  </section>
 
   <hr>
 
   <!-- Education -->
 
-  <div class="section-title">
-    Education:
-  </div>
+  <section id="education" class="page-section">
 
-  <ul class="education-list">
+    <div class="section-title">
+      Education:
+    </div>
 
-    <li>
-      <span class="education-date">
-        2024
-      </span>
+    <ul class="education-list">
 
-      Ph.D. in Computer Science,
+      <li>
+        <span class="education-date">
+          2024
+        </span>
 
-      <a href="#">
-        University Name
-      </a>.
-      <br>
+        Ph.D. in Computer Science,
 
-      Advisor:
+        <a href="#">
+          University Name
+        </a>.
+        <br>
 
-      <a href="#">
-        Advisor Name
-      </a>.
-    </li>
+        Advisor:
 
-    <li>
-      <span class="education-date">
-        2020
-      </span>
+        <a href="#">
+          Advisor Name
+        </a>.
+      </li>
 
-      M.Tech. in Computer Science,
+      <li>
+        <span class="education-date">
+          2020
+        </span>
 
-      <a href="#">
-        University Name
-      </a>.
-    </li>
+        M.Tech. in Computer Science,
 
-    <li>
-      <span class="education-date">
-        2018
-      </span>
+        <a href="#">
+          University Name
+        </a>.
+      </li>
 
-      B.Tech. in Computer Science,
+      <li>
+        <span class="education-date">
+          2018
+        </span>
 
-      <a href="#">
-        University Name
-      </a>.
-    </li>
+        B.Tech. in Computer Science,
 
-  </ul>
+        <a href="#">
+          University Name
+        </a>.
+      </li>
+
+    </ul>
+
+  </section>
 
   <hr>
 
   <!-- Research interests -->
 
-  <div class="section-title">
-    Research Interests:
-  </div>
+  <section id="interests" class="page-section">
 
-  <ul>
-    <li>Graph Algorithms</li>
-  </ul>
+    <div class="section-title">
+      Research Interests:
+    </div>
+
+    <ul>
+      <li>Graph Algorithms</li>
+    </ul>
+
+  </section>
 
   <hr>
 
   <!-- Teaching -->
 
-  <div class="section-title">
-    Teaching:
-  </div>
+  <section id="teaching" class="page-section">
 
-  <ul>
-    <li>
-      CDS 303: Theory of Computation
-      (<a href="ToC26.html">Fall 2026</a>)
-    </li>
-  </ul>
+    <div class="section-title">
+      Teaching:
+    </div>
+
+    <ul>
+      <li>
+        CDS 303: Theory of Computation
+        (<a href="ToC26.html">Fall 2026</a>)
+      </li>
+    </ul>
+
+  </section>
 
   <hr>
 
   <!-- Research publications -->
 
-  <div class="section-title">
-    Research:
-  </div>
+  <section id="research" class="page-section">
 
-  <div class="subsection-title">
-    In Journals
-  </div>
+    <div class="section-title">
+      Research:
+    </div>
 
-  <ol class="publication-list">
+    <div class="subsection-title">
+      In Journals
+    </div>
 
-    <li>
-      <span class="publication-title">
-        <a href="#">
-          Title of Your Journal Paper
-        </a>
-      </span>
+    <ol class="publication-list">
 
-      <span class="publication-meta">
-        With Coauthor One, Coauthor Two, and Coauthor Three
-      </span>
+      <li>
+        <span class="publication-title">
+          <a href="#">
+            Title of Your Journal Paper
+          </a>
+        </span>
 
-      <span class="publication-meta">
-        In <em>Journal Name</em>, 2026.
-        [<a href="#">link</a>]
-      </span>
-    </li>
+        <span class="publication-meta">
+          With Coauthor One, Coauthor Two, and Coauthor Three
+        </span>
 
-  </ol>
+        <span class="publication-meta">
+          In <em>Journal Name</em>, 2026.
+          [<a href="#">link</a>]
+        </span>
+      </li>
 
-  <div class="subsection-title">
-    In Conferences
-  </div>
+    </ol>
 
-  <ol class="publication-list">
+    <div class="subsection-title">
+      In Conferences
+    </div>
 
-    <li>
-      <span class="publication-title">
-        <a href="#">
-          Title of Your Conference Paper
-        </a>
-      </span>
+    <ol class="publication-list">
 
-      <span class="publication-meta">
-        With Coauthor One and Coauthor Two
-      </span>
+      <li>
+        <span class="publication-title">
+          <a href="#">
+            Title of Your Conference Paper
+          </a>
+        </span>
 
-      <span class="publication-meta">
-        Conference Name, 2026.
-        [<a href="#">link</a>]
-      </span>
-    </li>
+        <span class="publication-meta">
+          With Coauthor One and Coauthor Two
+        </span>
 
-  </ol>
+        <span class="publication-meta">
+          Conference Name, 2026.
+          [<a href="#">link</a>]
+        </span>
+      </li>
 
-  <div class="subsection-title">
-    Theses
-  </div>
+    </ol>
 
-  <ul class="publication-list">
+    <div class="subsection-title">
+      Theses
+    </div>
 
-    <li>
-      <span class="publication-title">
-        Title of Your Ph.D. Thesis
-      </span>
+    <ul class="publication-list">
 
-      <span class="publication-meta">
-        Ph.D. thesis, University Name, 2024.
-        [<a href="#">PDF</a>]
-      </span>
-    </li>
+      <li>
+        <span class="publication-title">
+          Title of Your Ph.D. Thesis
+        </span>
 
-    <li>
-      <span class="publication-title">
-        Title of Your Master's Thesis
-      </span>
+        <span class="publication-meta">
+          Ph.D. thesis, University Name, 2024.
+          [<a href="#">PDF</a>]
+        </span>
+      </li>
 
-      <span class="publication-meta">
-        Master's thesis, University Name, 2020.
-        [<a href="#">PDF</a>]
-      </span>
-    </li>
+      <li>
+        <span class="publication-title">
+          Title of Your Master's Thesis
+        </span>
 
-  </ul>
+        <span class="publication-meta">
+          Master's thesis, University Name, 2020.
+          [<a href="#">PDF</a>]
+        </span>
+      </li>
+
+    </ul>
+
+  </section>
 
 </body>
 </html>
