@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +34,22 @@
     }
 
     /*
+      Top area containing the course title and navigation tabs
+    */
+    .top-area {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 12px 0 14px;
+    }
+
+    /*
       Course title section
     */
     .course-header {
-      padding: 12px 20px 15px;
-      text-align: center;
+      flex-shrink: 0;
+      text-align: left;
     }
 
     .course-header h1 {
@@ -65,10 +76,13 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 7px;
-      margin: 5px 0 10px;
+      margin: 0;
+      padding-bottom: 1px;
     }
 
-    .top-navigation a {
+    .top-navigation a,
+    .top-navigation a:link,
+    .top-navigation a:visited {
       display: inline-block;
       padding: 5px 11px;
       border: 1px solid #7c8795;
@@ -83,10 +97,6 @@
         background-color 0.2s ease,
         color 0.2s ease,
         border-color 0.2s ease;
-    }
-
-    .top-navigation a:visited {
-      color: #1d2c45;
     }
 
     .top-navigation a:hover,
@@ -105,6 +115,10 @@
       margin: 22px 0;
       border: 0;
       border-top: 1px solid #929292;
+    }
+
+    .top-line {
+      margin-top: 0;
     }
 
     /*
@@ -210,7 +224,7 @@
     }
 
     /*
-      Bottom line and Top tab
+      Bottom horizontal line and Top tab
     */
     .bottom-navigation {
       display: flex;
@@ -219,13 +233,15 @@
       margin-top: 22px;
     }
 
-    .bottom-navigation .bottom-line {
+    .bottom-line {
       flex: 1;
       height: 1px;
       border-top: 1px solid #929292;
     }
 
-    .top-tab {
+    .top-tab,
+    .top-tab:link,
+    .top-tab:visited {
       display: inline-block;
       padding: 5px 14px;
       border: 1px solid #7c8795;
@@ -242,18 +258,27 @@
         border-color 0.2s ease;
     }
 
-    .top-tab:link,
-    .top-tab:visited {
-      color: #1d2c45;
-      text-decoration: none;
-    }
-
     .top-tab:hover,
     .top-tab:focus {
       border-color: #1d2c45;
       background: #1d2c45;
       color: #ffffff;
       text-decoration: none;
+    }
+
+    /*
+      Tablet and smaller-screen layout
+    */
+    @media (max-width: 900px) {
+      .top-area {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .top-navigation {
+        justify-content: flex-start;
+      }
     }
 
     /*
@@ -266,8 +291,8 @@
         font-size: 16px;
       }
 
-      .course-header {
-        padding: 10px 4px 12px;
+      .top-area {
+        padding: 10px 0 13px;
       }
 
       .course-header h1 {
@@ -279,11 +304,12 @@
       }
 
       .top-navigation {
-        justify-content: center;
         gap: 6px;
       }
 
-      .top-navigation a {
+      .top-navigation a,
+      .top-navigation a:link,
+      .top-navigation a:visited {
         padding: 5px 9px;
         font-size: 0.88em;
       }
@@ -308,22 +334,25 @@
 <body id="top">
   <main>
 
-    <!-- Course title -->
-    <header class="course-header">
-      <h1>CDS 303: Theory of Computation</h1>
-      <h2>Fall 2026</h2>
-    </header>
+    <!-- Course title and navigation tabs -->
+    <div class="top-area">
 
-    <!-- Navigation tabs -->
-    <nav class="top-navigation" aria-label="Course navigation">
-      <a href="#objectives">Objectives</a>
-      <a href="#background">Background</a>
-      <a href="#grading">Grading Policy</a>
-      <a href="#references">References</a>
-      <a href="#lectures">Lectures</a>
-    </nav>
+      <header class="course-header">
+        <h1>CDS 303: Theory of Computation</h1>
+        <h2>Fall 2026</h2>
+      </header>
 
-    <hr>
+      <nav class="top-navigation" aria-label="Course navigation">
+        <a href="#objectives">Objectives</a>
+        <a href="#background">Background</a>
+        <a href="#grading">Grading Policy</a>
+        <a href="#references">References</a>
+        <a href="#lectures">Lectures</a>
+      </nav>
+
+    </div>
+
+    <hr class="top-line">
 
     <!-- Basic course information -->
     <section aria-label="Course information">
@@ -431,4 +460,4 @@
   </main>
 </body>
 </html>
-```
+
