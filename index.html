@@ -85,6 +85,55 @@
       border-top: 1px solid #777777;
     }
 
+    /* Closely spaced double line below the page title */
+    .title-double-line {
+      height: 2px;
+      margin: 0 0 18px;
+      border: 0;
+      border-top: 1px solid #777777;
+      border-bottom: 1px solid #777777;
+    }
+
+    /* Bottom horizontal line with a Top tab on the right */
+    .bottom-navigation {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .bottom-navigation::before {
+      content: "";
+      flex: 1;
+      border-top: 1px solid #777777;
+    }
+
+    .bottom-navigation a:link,
+    .bottom-navigation a:visited {
+      display: inline-block;
+      padding: 6px 15px;
+      border: 1px solid #888888;
+      border-radius: 5px;
+      background-color: #f7f0e3;
+      color: #222222;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .bottom-navigation a:hover,
+    .bottom-navigation a:focus {
+      border-color: #555555;
+      background-color: #ddd2bd;
+      color: #000000;
+      text-decoration: none;
+    }
+
     a:link {
       color: #0000ee;
       text-decoration: underline;
@@ -214,17 +263,17 @@
     }
 
     .research-category {
-  display: inline-block;
-  margin: 14px 0 10px 18px;
-  padding: 6px 15px;
-  border: 1px solid #888888;
-  border-radius: 5px;
-  background-color: #f7f0e3;
-  color: #222222;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.2;
-}
+      display: inline-block;
+      margin: 14px 0 10px 18px;
+      padding: 6px 15px;
+      border: 1px solid #888888;
+      border-radius: 5px;
+      background-color: #f7f0e3;
+      color: #222222;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
 
     /*
       Mobile layout
@@ -310,7 +359,8 @@
         padding: 0;
       }
 
-      .top-navigation {
+      .top-navigation,
+      .bottom-navigation {
         display: none;
       }
 
@@ -321,7 +371,7 @@
   </style>
 </head>
 
-<body>
+<body id="top">
 
   <!-- Name and navigation -->
 
@@ -346,8 +396,7 @@
 
   </div>
 
-  <hr>
-   
+  <hr class="title-double-line">
 
   <!-- Photograph and professional information -->
 
@@ -648,11 +697,9 @@
 
 </section>
 
-    <hr>
-  
-
-
- 
+  <div class="bottom-navigation">
+    <a href="#top" aria-label="Go to the top of the page">Top</a>
+  </div>
 
 </body>
 </html>
