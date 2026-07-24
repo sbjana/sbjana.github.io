@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +58,46 @@
     }
 
     /*
+      Top navigation tabs
+    */
+    .top-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+      margin: 5px 0 10px;
+    }
+
+    .top-navigation a {
+      display: inline-block;
+      padding: 5px 11px;
+      border: 1px solid #7c8795;
+      border-radius: 3px;
+      background: #f4f6f8;
+      color: #1d2c45;
+      font-size: 0.94em;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .top-navigation a:visited {
+      color: #1d2c45;
+    }
+
+    .top-navigation a:hover,
+    .top-navigation a:focus {
+      border-color: #1d2c45;
+      background: #1d2c45;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /*
       Horizontal lines
     */
     hr {
@@ -71,6 +112,7 @@
     */
     section {
       padding: 2px 0;
+      scroll-margin-top: 15px;
     }
 
     .section-title {
@@ -168,6 +210,53 @@
     }
 
     /*
+      Bottom line and Top tab
+    */
+    .bottom-navigation {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .bottom-navigation .bottom-line {
+      flex: 1;
+      height: 1px;
+      border-top: 1px solid #929292;
+    }
+
+    .top-tab {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid #7c8795;
+      border-radius: 3px;
+      background: #f4f6f8;
+      color: #1d2c45;
+      font-size: 0.94em;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .top-tab:link,
+    .top-tab:visited {
+      color: #1d2c45;
+      text-decoration: none;
+    }
+
+    .top-tab:hover,
+    .top-tab:focus {
+      border-color: #1d2c45;
+      background: #1d2c45;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /*
       Mobile layout
     */
     @media (max-width: 650px) {
@@ -189,6 +278,16 @@
         font-size: 1.2em;
       }
 
+      .top-navigation {
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .top-navigation a {
+        padding: 5px 9px;
+        font-size: 0.88em;
+      }
+
       .section-title {
         font-size: 1.25em;
       }
@@ -206,7 +305,7 @@
   </style>
 </head>
 
-<body>
+<body id="top">
   <main>
 
     <!-- Course title -->
@@ -214,6 +313,15 @@
       <h1>CDS 303: Theory of Computation</h1>
       <h2>Fall 2026</h2>
     </header>
+
+    <!-- Navigation tabs -->
+    <nav class="top-navigation" aria-label="Course navigation">
+      <a href="#objectives">Objectives</a>
+      <a href="#background">Background</a>
+      <a href="#grading">Grading Policy</a>
+      <a href="#references">References</a>
+      <a href="#lectures">Lectures</a>
+    </nav>
 
     <hr>
 
@@ -226,9 +334,7 @@
           <a
             class="no-underline"
             href="https://sbjana.github.io/"
-          >
-            Satyabrata Jana
-          </a>
+          >Satyabrata Jana</a>
 
           (<a
             class="no-underline"
@@ -288,7 +394,7 @@
     <hr>
 
     <!-- Textbooks and references -->
-    <section id="textbooks">
+    <section id="references">
       <h2 class="section-title">Textbooks &amp; References</h2>
 
       <ul>
@@ -296,7 +402,7 @@
           <span class="book-title">
             <em>Introduction to the Theory of Computation</em>
           </span>
-          - Michael Sipser.
+          — Michael Sipser.
         </li>
       </ul>
     </section>
@@ -316,8 +422,13 @@
       </ul>
     </section>
 
-    <hr>
+    <!-- Bottom horizontal line with Top tab -->
+    <div class="bottom-navigation">
+      <div class="bottom-line"></div>
+      <a class="top-tab" href="#top">Top</a>
+    </div>
 
   </main>
 </body>
 </html>
+```
