@@ -3,75 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CDS 303: Theory of Computation, Fall 2026">
+  <meta
+    name="description"
+    content="CDS 303: Theory of Computation, Fall 2026"
+  >
+
   <title>CDS 303: Theory of Computation</title>
 
   <style>
-    /*
-      A clean recreation of the traditional IIT Delhi academic course-page
-      style: serif type, compact spacing, blue links and simple rules.
-    */
-
     html {
-      background: #fff;
+      scroll-behavior: smooth;
+      background: #ffffff;
     }
 
     body {
       max-width: 1120px;
       margin: 20px auto 60px;
-      padding: 0 28px;
-      background: #fff;
-      color: #202020;
+      padding: 0 30px;
+      background: #ffffff;
+      color: #282828;
       font-family: "Times New Roman", Times, serif;
       font-size: 17px;
-      line-height: 1.42;
+      line-height: 1.5;
     }
 
-    h1 {
-      margin: 0 0 10px;
-      font-size: 2em;
-      line-height: 1.15;
-      font-weight: 700;
+    /*
+      Course title section
+    */
+    .course-header {
+      padding: 12px 20px 15px;
+      text-align: center;
     }
 
-    h2 {
-      margin: 0 0 18px;
-      font-size: 1.45em;
+    .course-header h1 {
+      margin: 0 0 7px;
+      color: #1d2c45;
+      font-size: 2.15em;
       line-height: 1.2;
       font-weight: 700;
     }
 
+    .course-header h2 {
+      margin: 0;
+      color: #555555;
+      font-size: 1.35em;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    /*
+      Horizontal lines
+    */
     hr {
       height: 1px;
-      margin: 18px 0 22px;
+      margin: 22px 0;
       border: 0;
-      border-top: 1px solid #8b8b8b;
+      border-top: 1px solid #929292;
     }
 
-    p {
-      margin: 0 0 16px;
+    /*
+      General section styling
+    */
+    section {
+      padding: 2px 0;
     }
 
-    .info-block {
-      margin-bottom: 16px;
-    }
-
-    .label {
-      display: block;
+    .section-title {
+      margin: 0 0 12px;
+      color: #1d2c45;
+      font-size: 1.35em;
+      line-height: 1.25;
       font-weight: 700;
     }
 
-    .ta-list {
-      margin-top: 2px;
+    p {
+      margin: 0 0 12px;
     }
 
-    .ta-list div {
-      margin: 1px 0;
+    /*
+      Rectangular/square bullets
+    */
+    ul {
+      margin: 6px 0 12px 30px;
+      padding: 0;
+      list-style-type: square;
     }
 
+    li {
+      margin: 9px 0;
+      padding-left: 5px;
+    }
+
+    /*
+      Course information
+    */
+    .course-info {
+      margin-left: 30px;
+    }
+
+    .course-info li {
+      padding-left: 7px;
+    }
+
+    .info-label {
+      display: inline-block;
+      min-width: 105px;
+      color: #202020;
+      font-weight: 700;
+    }
+
+    /*
+      Links
+    */
     a:link {
       color: #0000cc;
       text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     a:visited {
@@ -83,113 +130,172 @@
       color: #cc0000;
     }
 
-    ol {
-      margin: 6px 0 18px 34px;
-      padding: 0;
+    /*
+      Textbook title
+    */
+    .book-title {
+      color: #8b1e3f;
+      font-weight: 700;
     }
 
-    li {
-      margin: 8px 0;
-      padding-left: 3px;
+    /*
+      Lecture entry
+    */
+    .lecture-title {
+      color: #004b87;
+      font-weight: 700;
     }
 
-    .credits p {
-      margin-bottom: 5px;
+    .lecture-date {
+      color: #555555;
+      font-weight: 600;
     }
 
+    /*
+      Mobile layout
+    */
     @media (max-width: 650px) {
       body {
-        margin-top: 14px;
+        margin-top: 12px;
         padding: 0 18px 40px;
         font-size: 16px;
       }
 
-      h1 {
-        font-size: 1.72em;
+      .course-header {
+        padding: 10px 4px 12px;
       }
 
-      h2 {
+      .course-header h1 {
+        font-size: 1.65em;
+      }
+
+      .course-header h2 {
+        font-size: 1.2em;
+      }
+
+      .section-title {
         font-size: 1.25em;
+      }
+
+      .course-info {
+        margin-left: 24px;
+      }
+
+      .info-label {
+        display: block;
+        min-width: 0;
+        margin-bottom: 1px;
       }
     }
   </style>
 </head>
+
 <body>
   <main>
-    <h1>CDS 303: Theory of Computation</h1>
-    <h2>Fall 2026</h2>
+
+    <!-- Course title -->
+    <header class="course-header">
+      <h1>CDS 303: Theory of Computation</h1>
+      <h2>Fall 2026</h2>
+    </header>
 
     <hr>
 
-    <div class="info-block">
-      <span class="label">Lectures by:</span>
-      <a href="https://sbjana.github.io/">Satyabrata Jana</a>.
-    </div>
+    <!-- Basic course information -->
+    <section aria-label="Course information">
+      <ul class="course-info">
+        <li>
+          <span class="info-label">Instructor:</span>
+          <a href="https://sbjana.github.io/">Satyabrata Jana</a>
+          (<a href="mailto:satyabrataj@iiserbpr.ac.in">satyabrataj@iiserbpr.ac.in</a>)
+        </li>
 
-    <div class="info-block">
-      <span class="label">Time of the class:</span>
-      Tuesdays, Thursdays and Fridays 11:00am to 11:50pm.
-    </div>
+        <li>
+          <span class="info-label">Timings:</span>
+          Wednesdays (6:00–7:30 PM)
+        </li>
 
-    <div class="info-block">
-      <span class="label">Office hours:</span>
-      By email appointment.
-    </div>
-
-   
-
-    <div class="info-block">
-      <span class="label">Tutorials:</span>
-      On Mondays, Tuesdays, Thursdays and Fridays in LH611 (depending on your group).
-    </div>
-
- 
-
-    <div class="info-block">
-      <span class="label">Course Material:</span>
-    </div>
-
-    <ol>
-      <li>
-        <em>Algorithms</em> by Jeff Erickson [JE]: The book is freely available
-        <a href="https://jeffe.cs.illinois.edu/teaching/algorithms/">here</a> and can turn out to be
-        a joyful read even for those who want to learn the subject on their own.
-      </li>
-      <li>
-        <em>Introduction to Algorithms</em> (PHI) by Cormen, Leiserson, Rivest, and Stein [CLRS].
-      </li>
-    </ol>
-
-    <div class="info-block credits">
-      <span class="label">Credits:</span>
-      <p>The course will be evaluated on a 100-point scale.</p>
-      <p>The minor and major will be worth 30 and 40 points respectively.</p>
-      <p>The quizzes and assignments will be worth 30 points.</p>
-      <p>
-        To audit-pass the course, you need to have at least 40 points, at least 30 of which
-        should come from the minor and major.
-      </p>
-    </div>
+        <li>
+          <span class="info-label">Venue:</span>
+          hhh
+        </li>
+      </ul>
+    </section>
 
     <hr>
 
-     <div class="info-block">
-      <span class="label">Course Material:</span>
-    </div>
+    <!-- Course objectives -->
+    <section id="objectives">
+      <h2 class="section-title">Course Objectives</h2>
 
-    <ul>
-      <li>
-        <em>Algorithms</em> by Jeff Erickson [JE]: The book is freely available
-        <a href="https://jeffe.cs.illinois.edu/teaching/algorithms/">here</a> and can turn out to be
-        a joyful read even for those who want to learn the subject on their own.
-      </li>
-      <li>
-        <em>Introduction to Algorithms</em> (PHI) by Cormen, Leiserson, Rivest, and Stein [CLRS].
-      </li>
-    </ul>
+      <ul>
+        <li>
+          In this course, we will learn algorithms and the fundamental
+          mathematical models of computation.
+        </li>
+      </ul>
+    </section>
 
-     <hr>
-    
+    <hr>
+
+    <!-- Background -->
+    <section id="background">
+      <h2 class="section-title">Background</h2>
+
+      <ul>
+        <li>
+          There is no formal prerequisite for this course.
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Grading policy -->
+    <section id="grading">
+      <h2 class="section-title">Grading Policy</h2>
+
+      <ul>
+        <li>Major examination: 45%</li>
+        <li>Minor examination: 25%</li>
+        <li>Assignments: 20%</li>
+        <li>Attendance: 10%</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Textbooks and references -->
+    <section id="textbooks">
+      <h2 class="section-title">Textbooks &amp; References</h2>
+
+      <ul>
+        <li>
+          <span class="book-title">
+            <em>Introduction to the Theory of Computation</em>
+          </span>
+          — Michael Sipser.
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Lectures -->
+    <section id="lectures">
+      <h2 class="section-title">Lectures</h2>
+
+      <ul>
+        <li>
+          <span class="lecture-title">Lecture 1</span>
+          <span class="lecture-date">(01.08.2026):</span>
+          Introduction to the course.
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
   </main>
 </body>
 </html>
