@@ -1,30 +1,22 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Replace this title with your name -->
   <title>Satyabrata Jana</title>
 
   <style>
-    /*
-      This intentionally recreates the simple, traditional academic-homepage
-      appearance of the supplied reference: serif text, blue links, a floated
-      portrait, compact headings, and long publication/course lists.
-    */
-
     html {
-      - background: #ffffff;
-+ background: #fffaf0;
+      background-color: #fffaf0;
     }
 
     body {
       max-width: 1180px;
       margin: 18px auto 60px;
       padding: 0 28px;
-      - background: #ffffff;
-+ background: #fffaf0;
+      background-color: #fffaf0;
       color: #222222;
       font-family: "Times New Roman", Times, serif;
       font-size: 16px;
@@ -36,12 +28,6 @@
       font-size: 34px;
       line-height: 1.08;
     }
-
-    horizontal-line {
-  margin: 0 0 18px;
-  border: 0;
-  border-top: 1px solid #777777;
-}
 
     hr {
       margin: 0 0 18px;
@@ -100,7 +86,8 @@
       font-weight: bold;
     }
 
-    ul {
+    ul,
+    ol {
       margin-top: 5px;
       padding-left: 38px;
     }
@@ -122,10 +109,6 @@
       margin-top: 2px;
     }
 
-    .small-gap {
-      margin-top: 3px;
-    }
-
     @media (max-width: 640px) {
       body {
         margin-top: 12px;
@@ -144,12 +127,18 @@
         margin: 0 0 15px;
       }
 
-      ul {
+      ul,
+      ol {
         padding-left: 28px;
       }
     }
 
     @media print {
+      html,
+      body {
+        background-color: #ffffff;
+      }
+
       body {
         max-width: none;
         margin: 0;
@@ -164,27 +153,15 @@
 </head>
 
 <body>
-  <!-- =========================
-       NAME
-       ========================= -->
   <h1>Satyabrata Jana</h1>
   <hr>
 
-  <!--
-    PHOTO:
-    The embedded SVG below keeps this as one self-contained HTML file.
-    To use your own photo, replace the entire src value with:
-    src="your-photo.jpg"
-  -->
   <img
     class="profile-photo"
-    alt="Your portrait"
+    alt="Portrait of Satyabrata Jana"
     src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='370' height='470' viewBox='0 0 370 470'%3E%3Crect width='370' height='470' fill='%23e5e5e5'/%3E%3Ccircle cx='185' cy='155' r='78' fill='%23999999'/%3E%3Cpath d='M70 405c12-105 67-157 115-157s103 52 115 157' fill='%23999999'/%3E%3Ctext x='185' y='445' font-family='Arial' font-size='22' text-anchor='middle' fill='%23555555'%3EYOUR PHOTO%3C/text%3E%3C/svg%3E"
   >
 
-  <!-- =========================
-       BIOGRAPHY
-       ========================= -->
   <p>
     I am an <strong>Assistant Professor</strong> in the
     <a href="#">Department of Your Department</a> at
@@ -202,23 +179,18 @@
   </p>
 
   <p>
-    My current work includes a short description of your research programme,
+    My current work includes a short description of my research programme,
     methods, applications, and collaborations. Replace this paragraph with a
-    concise academic biography of approximately four to eight sentences.
-    You can find my <a href="cv.pdf">CV here</a>,
-    my <a href="#">Google Scholar page here</a>, and my
+    concise academic biography. You can find my
+    <a href="cv.pdf">CV here</a>,
+    my <a href="#">Google Scholar profile here</a>, and my
     <a href="#">DBLP or ORCID profile here</a>.
   </p>
 
   <div class="clear"></div>
 
-  <!-- =========================
-       CONTACT
-       ========================= -->
+  <hr>
 
-  <hr class="horizontal-line">
-
-  
   <div class="contact">
     <div class="contact-title">Contact:</div>
     &nbsp; Department of Your Department<br>
@@ -227,118 +199,99 @@
     &nbsp; City, Postal Code<br>
     &nbsp; Country<br>
     &nbsp; Room: Your Office Number<br>
-    &nbsp; e-mail: yourname [at] university [dot] edu
+    &nbsp; Email: yourname [at] university [dot] edu
   </div>
-
-    <div class="clear"></div>
-
-  <!-- =========================
-       Research Interest
-       ========================= -->
-
-<hr class="horizontal-line">
-
-  
-  <div class="section-title">Research Interests:</div>
-  <ul>
-
-    <li>
-      Graph Algorithms
-    </li>
-    
-  </ul>
-
-    
-
 
   <div class="clear"></div>
 
-  <!-- =========================
-       TEACHING
-       ========================= -->
+  <hr>
 
-<hr class="horizontal-line">
+  <div class="section-title">Research Interests:</div>
 
-  
-  <div class="section-title">Teaching:</div>
   <ul>
-
-    <li>
-      CDS 303: Theory of Computation (
-      <a href="ToC26.html">Fall 2026</a>)
-    </li>
-    
+    <li>Graph Algorithms</li>
   </ul>
 
-  <!-- =========================
-       RESEARCH
-       ========================= -->
+  <div class="clear"></div>
 
-  <hr class="horizontal-line">
+  <hr>
 
-  
+  <div class="section-title">Teaching:</div>
+
+  <ul>
+    <li>
+      CDS 303: Theory of Computation
+      (<a href="ToC26.html">Fall 2026</a>)
+    </li>
+  </ul>
+
+  <hr>
+
   <div class="section-title">Research:</div>
 
-  <div class="subsection-title">&ensp; In Journals</div>
+  <div class="subsection-title">In Journals</div>
+
   <ol class="publication-list">
     <li>
       <span class="publication-title">
         <a href="#">Title of Your Journal Paper</a>
       </span>
+
       <span class="publication-meta">
-        with Coauthor One, Coauthor Two, and Coauthor Three
+        With Coauthor One, Coauthor Two, and Coauthor Three
       </span>
+
       <span class="publication-meta">
-        in <em>Journal Name</em>,  (2026).
-        [<a href="#">link</a>] 
+        In <em>Journal Name</em>, 2026.
+        [<a href="#">link</a>]
       </span>
     </li>
-
-   
-
-   
   </ol>
 
-  <div class="subsection-title">&ensp; In Conferences</div>
+  <div class="subsection-title">In Conferences</div>
+
   <ul class="publication-list">
     <li>
       <span class="publication-title">
         <a href="#">Title of Your Conference Paper</a>
       </span>
+
       <span class="publication-meta">
-        with Coauthor One and Coauthor Two
+        With Coauthor One and Coauthor Two
       </span>
+
       <span class="publication-meta">
-          CONFERENCE 2026.
-        [<a href="#">link</a>] 
+        Conference Name, 2026.
+        [<a href="#">link</a>]
       </span>
     </li>
-   
   </ul>
 
-  <div class="subsection-title">&ensp; Theses</div>
+  <div class="subsection-title">Theses</div>
+
   <ul class="publication-list">
     <li>
       <span class="publication-title">
         <a href="#">Title of Your PhD Thesis</a>
       </span>
-      <span class="publication-meta">PhD thesis, University Name, 2024. [<a href="#">pdf</a>]</span>
+
+      <span class="publication-meta">
+        PhD thesis, University Name, 2024.
+        [<a href="#">PDF</a>]
+      </span>
     </li>
+
     <li>
       <span class="publication-title">
         <a href="#">Title of Your Master's Thesis</a>
       </span>
-      <span class="publication-meta">Master's thesis, University Name, 2020. [<a href="#">pdf</a>]</span>
+
+      <span class="publication-meta">
+        Master's thesis, University Name, 2020.
+        [<a href="#">PDF</a>]
+      </span>
     </li>
   </ul>
-
-  <!--
-    EDITING CHECKLIST
-    1. Replace every "Your ..." placeholder.
-    2. Replace # links with real URLs.
-    3. Replace the embedded placeholder portrait with your photo.
-    4. Add or remove teaching/publication <li> blocks.
-    5. Save this file as index.html before uploading to GitHub Pages.
-  -->
 </body>
 </html>
+```
