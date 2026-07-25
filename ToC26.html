@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,13 +34,14 @@
     }
 
     /*
-      Top area containing the course title and navigation tabs
+      Top area containing the centred course title
+      and navigation tabs on the right
     */
     .top-area {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 30px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 25px;
       padding: 12px 0 14px;
     }
 
@@ -48,8 +49,8 @@
       Course title section
     */
     .course-header {
-      flex-shrink: 0;
-      text-align: left;
+      grid-column: 2;
+      text-align: center;
     }
 
     .course-header h1 {
@@ -60,21 +61,20 @@
       font-weight: 700;
     }
 
-   
-
     .course-header h2 {
-  margin: 0;
-  color: #555555;
-  font-size: 1.35em;
-  line-height: 1.2;
-  font-weight: 600;
-  text-align: center;
-}
+      margin: 0;
+      color: #555555;
+      font-size: 1.35em;
+      line-height: 1.2;
+      font-weight: 600;
+      text-align: center;
+    }
 
     /*
       Top navigation tabs
     */
     .top-navigation {
+      grid-column: 3;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
@@ -206,11 +206,12 @@
     }
 
     /*
-      Textbook title
+      Textbook title: normal text, not bold or italic
     */
     .book-title {
       color: #8b1e3f;
-      font-weight: 700;
+      font-style: normal;
+      font-weight: 400;
     }
 
     /*
@@ -274,13 +275,19 @@
     */
     @media (max-width: 900px) {
       .top-area {
-        align-items: flex-start;
+        display: flex;
+        align-items: center;
         flex-direction: column;
         gap: 16px;
       }
 
+      .course-header {
+        width: 100%;
+        text-align: center;
+      }
+
       .top-navigation {
-        justify-content: flex-start;
+        justify-content: center;
       }
     }
 
@@ -337,20 +344,15 @@
 <body id="top">
   <main>
 
-    <!-- Course title and navigation tabs -->
+    <!-- Centred course title and navigation tabs -->
     <div class="top-area">
 
       <header class="course-header">
-  <h1>CDS 303: Theory of Computation</h1>
-  <h2>Fall 2026</h2>
-</header>
-
-      
+        <h1>CDS 303: Theory of Computation</h1>
+        <h2>Fall 2026</h2>
+      </header>
 
       <nav class="top-navigation" aria-label="Course navigation">
-        <a href="#objectives">Objectives</a>
-        <a href="#background">Background</a>
-        <a href="#grading">Grading Policy</a>
         <a href="#references">References</a>
         <a href="#lectures">Lectures</a>
       </nav>
@@ -362,6 +364,7 @@
     <!-- Basic course information -->
     <section aria-label="Course information">
       <ul class="course-info">
+
         <li>
           <span class="info-label">Instructor:</span>
 
@@ -385,6 +388,13 @@
           <span class="info-label">Venue:</span>
           hhh
         </li>
+
+        <li>
+          <span class="info-label">Grading:</span>
+          Major exam (45%), Minor exam (25%),
+          Assignments (20%), Attendance (10%)
+        </li>
+
       </ul>
     </section>
 
@@ -413,20 +423,6 @@
 
     <hr>
 
-    <!-- Grading policy -->
-    <section id="grading">
-      <h2 class="section-title">Grading Policy</h2>
-
-      <ul>
-        <li>Major examination: 45%</li>
-        <li>Minor examination: 25%</li>
-        <li>Assignments: 20%</li>
-        <li>Attendance: 10%</li>
-      </ul>
-    </section>
-
-    <hr>
-
     <!-- Textbooks and references -->
     <section id="references">
       <h2 class="section-title">Textbooks &amp; References</h2>
@@ -434,7 +430,7 @@
       <ul>
         <li>
           <span class="book-title">
-            <em>Introduction to the Theory of Computation</em>
+            Introduction to the Theory of Computation
           </span>
           — Michael Sipser.
         </li>
@@ -465,4 +461,4 @@
   </main>
 </body>
 </html>
-
+```
