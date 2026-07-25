@@ -8,41 +8,84 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <meta
+    name="description"
+    content="Academic homepage of Satyabrata Jana, Assistant Professor of Computer Science at IISER Berhampur."
+  >
+
   <title>Satyabrata Jana</title>
 
   <style>
-    html {
-  background-color: #ffffff;
-  scroll-behavior: smooth;
-}
+    :root {
+      --page-background: #ffffff;
+      --text-color: #2f2f2f;
+      --muted-text: #666666;
+      --link-color: #245b82;
+      --link-hover: #9b2c2c;
+      --accent-color: #245b82;
+      --line-color: #d3d7da;
+      --strong-line: #777777;
+      --tab-background: #f3f6f8;
+      --tab-hover: #e7eff5;
+      --tab-border: #b7c3cc;
+    }
 
-body {
-  max-width: 1180px;
-  margin: 18px auto 60px;
-  padding: 0 28px;
-  background-color: #ffffff;
-  color: #222222;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  line-height: 1.28;
-}
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--page-background);
+    }
+
+    body {
+      max-width: 1050px;
+      margin: 20px auto 60px;
+      padding: 0 28px;
+      background-color: var(--page-background);
+      color: var(--text-color);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 16px;
+      line-height: 1.48;
+    }
 
     /*
-      Name and navigation tabs
+      General links
+    */
+
+    a:link,
+    a:visited {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--link-hover);
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /*
+      Page header and navigation
     */
 
     .top-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
-      margin-bottom: 7px;
+      gap: 28px;
+      margin-bottom: 9px;
     }
 
     h1 {
       margin: 0;
-      font-size: 34px;
+      color: #222222;
+      font-size: 35px;
       line-height: 1.08;
+      letter-spacing: -0.3px;
       white-space: nowrap;
     }
 
@@ -55,122 +98,53 @@ body {
     }
 
     .top-navigation a:link,
-    .top-navigation a:visited {
-      display: inline-block;
-      padding: 6px 13px;
-      border: 1px solid #888888;
-      border-radius: 5px;
-      background-color: #f7f0e3;
-      color: #222222;
-      font-size: 15px;
-      font-weight: bold;
-      text-decoration: none;
-      transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .top-navigation a:hover,
-    .top-navigation a:focus {
-      border-color: #555555;
-      background-color: #ddd2bd;
-      color: #000000;
-      text-decoration: none;
-    }
-
-    hr {
-      margin: 0 0 18px;
-      border: 0;
-      border-top: 1px solid #777777;
-    }
-
-    /* Closely spaced double line below the page title */
-    .title-double-line {
-      height: 2px;
-      margin: 0 0 18px;
-      border: 0;
-      border-top: 1px solid #777777;
-      border-bottom: 1px solid #777777;
-    }
-
-    /* Bottom horizontal line with a Top tab on the right */
-    .bottom-navigation {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .bottom-navigation::before {
-      content: "";
-      flex: 1;
-      border-top: 1px solid #777777;
-    }
-
+    .top-navigation a:visited,
     .bottom-navigation a:link,
     .bottom-navigation a:visited {
       display: inline-block;
-      padding: 6px 15px;
-      border: 1px solid #888888;
+      padding: 6px 12px;
+      border: 1px solid var(--tab-border);
       border-radius: 5px;
-      background-color: #f7f0e3;
-      color: #222222;
-      font-size: 15px;
+      background-color: var(--tab-background);
+      color: #263746;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 14px;
       font-weight: bold;
       line-height: 1.2;
       text-decoration: none;
       transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
     }
 
+    .top-navigation a:hover,
+    .top-navigation a:focus,
     .bottom-navigation a:hover,
     .bottom-navigation a:focus {
-      border-color: #555555;
-      background-color: #ddd2bd;
-      color: #000000;
+      border-color: var(--accent-color);
+      background-color: var(--tab-hover);
+      color: var(--accent-color);
       text-decoration: none;
     }
 
-
-
-  a:link,
-a:visited,
-a:hover,
-a:focus {
-  text-decoration: none;
-}
-
-a:link {
-  color:  #004b87;
-}
-
-a:visited {
-  color: #004b87;
-}
-
-a:hover,
-a:focus {
-  color: #cc0000;
-}
-
-
-
-    p {
-      margin: 0 0 12px;
+    .title-double-line {
+      height: 2px;
+      margin: 0 0 22px;
+      border: 0;
+      border-top: 1px solid var(--strong-line);
+      border-bottom: 1px solid var(--strong-line);
     }
 
     /*
-      Photograph and professional information
+      Profile area
     */
 
     .profile-section {
       display: flex;
       align-items: flex-start;
-      gap: 26px;
-      margin-bottom: 24px;
+      gap: 28px;
+      margin-bottom: 28px;
     }
 
     .profile-photo {
@@ -178,30 +152,34 @@ a:focus {
       width: 185px;
       height: 235px;
       object-fit: cover;
-      border: 1px solid #999999;
+      border: 1px solid #b0b0b0;
+      border-radius: 4px;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
     }
 
     .profile-information {
       flex: 1;
-      padding-top: 2px;
+      min-width: 0;
+      padding-top: 1px;
     }
 
-    .information-heading {
-      margin-bottom: 7px;
-      font-size: 18px;
+    .position-name {
+      margin-bottom: 2px;
+      color: #222222;
+      font-size: 19px;
       font-weight: bold;
     }
 
     .affiliation-block {
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .contact-block {
       width: fit-content;
-      min-width: 350px;
-      margin-top: 25px;
-      padding-top: 13px;
-      border-top: 1px solid #bbb3a5;
+      min-width: 360px;
+      margin-top: 22px;
+      padding-top: 12px;
+      border-top: 1px solid #c8cdd1;
       line-height: 1.6;
     }
 
@@ -213,57 +191,110 @@ a:focus {
 
     .contact-label {
       display: inline-block;
-      min-width: 68px;
+      min-width: 72px;
       font-weight: bold;
+    }
+
+    .academic-links {
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    .academic-links span {
+      margin: 0 7px;
+      color: #999999;
     }
 
     /*
-      General sections
+      Sections
     */
 
     .page-section {
+      margin-top: 30px;
       scroll-margin-top: 20px;
     }
 
-    .section-title {
-      margin-top: 22px;
-      margin-bottom: 8px;
-      font-size: 19px;
-      font-weight: bold;
+    .page-section + .page-section {
+      padding-top: 26px;
+      border-top: 1px solid var(--line-color);
     }
 
-    .subsection-title {
-      margin: 13px 0 7px 18px;
+    .section-title {
+      margin: 0 0 13px;
+      color: #242424;
+      font-size: 20px;
       font-weight: bold;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 12px;
     }
 
     ul,
     ol {
-      margin-top: 5px;
+      margin: 6px 0 0;
       padding-left: 38px;
     }
 
     li {
-      margin-bottom: 7px;
+      margin-bottom: 9px;
     }
+
+    /*
+      News
+    */
+
+    .news-text {
+      max-width: 900px;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /*
+      Positions and education
+    */
 
     .position-list li,
     .education-list li {
-      margin-bottom: 12px;
+      margin-bottom: 13px;
     }
 
     .position-date,
     .education-date {
       display: block;
       margin-bottom: 2px;
+      color: #444444;
       font-weight: bold;
     }
 
+    /*
+      Publications
+    */
+
+    .research-category {
+      display: inline-block;
+      margin: 15px 0 9px;
+      padding: 5px 14px;
+      border: 1px solid var(--tab-border);
+      border-radius: 5px;
+      background-color: var(--tab-background);
+      color: #263746;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .publication-list {
+      margin-top: 3px;
+    }
+
     .publication-list li {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .publication-title {
+      display: block;
       font-weight: bold;
     }
 
@@ -272,27 +303,59 @@ a:focus {
       margin-top: 2px;
     }
 
-    .research-category {
+    .doi-link:link,
+    .doi-link:visited {
       display: inline-block;
-      margin: 14px 0 10px 18px;
-      padding: 6px 15px;
-      border: 1px solid #888888;
-      border-radius: 5px;
-      background-color: #f7f0e3;
-      color: #222222;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 1.2;
+      margin-left: 7px;
+      padding: 1px 8px;
+      border: 1px solid #a9b8c5;
+      border-radius: 10px;
+      background-color: #f3f6f8;
+      color: #43586a;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.35;
+      vertical-align: 1px;
+    }
+
+    .doi-link:hover,
+    .doi-link:focus {
+      border-color: var(--accent-color);
+      background-color: var(--tab-hover);
+      color: var(--accent-color);
     }
 
     /*
-      Mobile layout
+      Footer and bottom navigation
     */
 
-    @media (max-width: 760px) {
+    .site-footer {
+      margin-top: 34px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-color);
+      color: var(--muted-text);
+      font-size: 14px;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-note {
+      margin: 0;
+    }
+
+    /*
+      Responsive layout
+    */
+
+    @media (max-width: 800px) {
       body {
-        margin-top: 12px;
-        padding: 0 16px 40px;
+        margin-top: 14px;
+        padding: 0 18px 42px;
       }
 
       .top-header {
@@ -300,20 +363,20 @@ a:focus {
       }
 
       h1 {
-        margin-bottom: 14px;
-        font-size: 30px;
+        margin-bottom: 15px;
+        font-size: 31px;
         white-space: normal;
       }
 
       .top-navigation {
         justify-content: flex-start;
-        margin-bottom: 12px;
+        margin-bottom: 13px;
       }
 
       .top-navigation a:link,
       .top-navigation a:visited {
         padding: 5px 10px;
-        font-size: 14px;
+        font-size: 13px;
       }
 
       .profile-section {
@@ -324,22 +387,19 @@ a:focus {
         display: block;
         width: 170px;
         height: 216px;
-        margin: 0 0 18px;
-      }
-
-      .profile-information {
-        padding-top: 0;
+        margin: 0 0 20px;
       }
 
       .contact-block {
         width: auto;
         min-width: 0;
-        margin-top: 22px;
       }
+    }
 
+    @media (max-width: 560px) {
       .contact-row {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 9px;
       }
 
       .contact-label {
@@ -347,14 +407,22 @@ a:focus {
         min-width: 0;
       }
 
+      .academic-links span {
+        margin: 0 4px;
+      }
+
       ul,
       ol {
-        padding-left: 28px;
+        padding-left: 27px;
+      }
+
+      .bottom-navigation {
+        align-items: flex-end;
       }
     }
 
     /*
-      Printing
+      Print layout
     */
 
     @media print {
@@ -367,15 +435,24 @@ a:focus {
         max-width: none;
         margin: 0;
         padding: 0;
+        color: #000000;
       }
 
       .top-navigation,
-      .bottom-navigation {
+      .bottom-navigation a {
         display: none;
+      }
+
+      .profile-photo {
+        box-shadow: none;
       }
 
       a {
         color: #000000 !important;
+      }
+
+      .page-section {
+        break-inside: avoid;
       }
     }
   </style>
@@ -383,338 +460,390 @@ a:focus {
 
 <body id="top">
 
-  <!-- Name and navigation -->
+  <!-- =========================================================
+       Header and navigation
+       ========================================================= -->
 
-  <div class="top-header">
+  <header>
+    <div class="top-header">
+      <h1>Satyabrata Jana</h1>
 
-    <h1>Satyabrata Jana</h1>
+      <nav class="top-navigation" aria-label="Main navigation">
+        <a href="#interests">Research</a>
+        <a href="#positions">Position</a>
+        <a href="#education">Education</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#publications">Publication</a>
 
-    <nav class="top-navigation" aria-label="Main navigation">
-      <a href="#positions">Positions</a>
-      <a href="#education">Education</a>
-      <a href="#interests">Research Interests</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#research">Publications</a>
-      <a
-    href="https://sites.google.com/view/sbjana/home"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    FPT
-  </a>
-    </nav>
-
-  </div>
-
-  <hr class="title-double-line">
-
-  <!-- Photograph and professional information -->
-
-  <div class="profile-section">
-
-    <img
-      class="profile-photo"
-      src="090524WU-98.jpg"
-      alt="Portrait of Satyabrata Jana"
-    >
-
-    <div class="profile-information">
-
-     
-
-      <div class="affiliation-block">
-        Assistant Professor<br>
-
-        <a href="#">
-           Department of Computer Science
+        <a
+          href="https://sites.google.com/view/sbjana/home"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          FPT
         </a>
-        <br>
+      </nav>
+    </div>
 
-        <a href="#">
-          IISER Berhampur
-        </a>
-        <br>
-        Brahmapur, Odisha – 760003<br>
-        India
+    <hr class="title-double-line">
+  </header>
+
+  <main>
+
+    <!-- =======================================================
+         Profile and contact information
+         ======================================================= -->
+
+    <section class="profile-section" aria-label="Profile">
+
+      <img
+        class="profile-photo"
+        src="090524WU-98.jpg"
+        alt="Portrait of Satyabrata Jana"
+      >
+
+      <div class="profile-information">
+
+        <div class="position-name">
+          Assistant Professor
+        </div>
+
+        <div class="affiliation-block">
+          <a href="#">
+            Department of Computer Science
+          </a>
+          <br>
+
+          <a href="#">
+            IISER Berhampur
+          </a>
+          <br>
+
+          Brahmapur, Odisha – 760003<br>
+          India
+        </div>
+
+        <div class="contact-block">
+
+          <div class="contact-row">
+            <span class="contact-label">Email:</span>
+
+            <span>
+              <!-- Replace this address with your official email. -->
+              <a href="mailto:yourname@university.edu">
+                yourname [at] university [dot] edu
+              </a>
+            </span>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-label">Office:</span>
+
+            <span>
+              <!-- Replace with your office details. -->
+              Room Number, Building Name
+            </span>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-label">Phone:</span>
+
+            <span>
+              <!-- Replace with your official phone number, or remove this row. -->
+              +91-XXXXXXXXXX
+            </span>
+          </div>
+
+          <div class="academic-links">
+            <!-- Replace # with the correct links. -->
+            <a href="#">CV</a>
+            <span aria-hidden="true">·</span>
+            <a href="#">Google Scholar</a>
+            <span aria-hidden="true">·</span>
+            <a href="#">DBLP</a>
+            <span aria-hidden="true">·</span>
+            <a href="#">ORCID</a>
+            <span aria-hidden="true">·</span>
+            <a href="#">GitHub</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         Research interests
+         ======================================================= -->
+
+    <section id="interests" class="page-section">
+
+      <h2 class="section-title">
+        Research Interests
+      </h2>
+
+      <ul>
+        <li>Graph Algorithms</li>
+        <li>Parameterized Algorithms and Complexity</li>
+        <li>Approximation Algorithms</li>
+        <li>Theoretical Computer Science</li>
+      </ul>
+
+    </section>
+
+    <!-- =======================================================
+         News
+         ======================================================= -->
+
+    <section id="news" class="page-section">
+
+      <h2 class="section-title">
+        News
+      </h2>
+
+      <p class="news-text">
+        I am always looking for sincere and motivated students and researchers
+        to join my research group at various levels (Ph.D., postdoctoral fellows,
+        interns, and Bachelor's/Master's thesis students). If you are interested
+        in my research area, please feel free to contact me.
+      </p>
+
+    </section>
+
+    <!-- =======================================================
+         Positions
+         ======================================================= -->
+
+    <section id="positions" class="page-section">
+
+      <h2 class="section-title">
+        Current and Past Positions
+      </h2>
+
+      <ul class="position-list">
+
+        <li>
+          <span class="position-date">
+            Since 2026
+          </span>
+
+          Assistant Professor at the
+
+          <a href="#">
+            Department of Computer Science
+          </a>,
+
+          <a href="#">
+            IISER Berhampur
+          </a>,
+
+          India.
+        </li>
+
+        <li>
+          <span class="position-date">
+            Previous position dates
+          </span>
+
+          Previous academic position at
+
+          <a href="#">
+            Institution Name
+          </a>,
+
+          Country.
+        </li>
+
+      </ul>
+
+    </section>
+
+    <!-- =======================================================
+         Education
+         ======================================================= -->
+
+    <section id="education" class="page-section">
+
+      <h2 class="section-title">
+        Education
+      </h2>
+
+      <ul class="education-list">
+
+        <li>
+          <span class="education-date">
+            2024
+          </span>
+
+          Ph.D. in Computer Science,
+
+          <a href="#">
+            University Name
+          </a>.
+          <br>
+
+          Advisor:
+
+          <a href="#">
+            Advisor Name
+          </a>.
+        </li>
+
+        <li>
+          <span class="education-date">
+            2020
+          </span>
+
+          M.Tech. in Computer Science,
+
+          <a href="#">
+            University Name
+          </a>.
+        </li>
+
+        <li>
+          <span class="education-date">
+            2018
+          </span>
+
+          B.Tech. in Computer Science,
+
+          <a href="#">
+            University Name
+          </a>.
+        </li>
+
+      </ul>
+
+    </section>
+
+    <!-- =======================================================
+         Teaching
+         ======================================================= -->
+
+    <section id="teaching" class="page-section">
+
+      <h2 class="section-title">
+        Teaching
+      </h2>
+
+      <ul>
+        <li>
+          CDS 303: Theory of Computation
+          (<a href="ToC26.html">Fall 2026</a>)
+        </li>
+
+        <li>
+          CDS 409: Approximation Algorithms
+          (<a href="AprxAlg26.html">Fall 2026</a>)
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- =======================================================
+         Publications
+         ======================================================= -->
+
+    <section id="publications" class="page-section">
+
+      <h2 class="section-title">
+        Publications
+      </h2>
+
+      <div class="research-category">
+        Journals
       </div>
 
-      <div class="contact-block">
-
-        <div class="contact-row">
-          <span class="contact-label">Email:</span>
-
-          <span>
-            <a href="mailto:yourname@university.edu">
-              yourname [at] university [dot] edu
+      <ol class="publication-list">
+        <li>
+          <span class="publication-title">
+            Title of Your Journal Paper
+            <a
+              class="doi-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DOI
             </a>
           </span>
-        </div>
 
-        <div class="contact-row">
-          <span class="contact-label">Office:</span>
-
-          <span>
-            Room Number, Building Name
+          <span class="publication-meta">
+            <strong>Satyabrata Jana</strong>, Coauthor One, Coauthor Two,
+            and Coauthor Three
           </span>
-        </div>
 
-        <div class="contact-row">
-          <span class="contact-label">Phone:</span>
-
-          <span>
-            +91-XXXXXXXXXX
+          <span class="publication-meta">
+            In <em>Journal Name</em>, 2026.
           </span>
-        </div>
+        </li>
+      </ol>
 
+      <div class="research-category">
+        Conferences
       </div>
 
+      <ol class="publication-list">
+        <li>
+          <span class="publication-title">
+            Title of Your Conference Paper
+            <a
+              class="doi-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DOI
+            </a>
+          </span>
+
+          <span class="publication-meta">
+            <strong>Satyabrata Jana</strong>, Coauthor One, and Coauthor Two
+          </span>
+
+          <span class="publication-meta">
+            Conference Name, 2026.
+          </span>
+        </li>
+      </ol>
+
+      <div class="research-category">
+        Theses
+      </div>
+
+      <ul class="publication-list">
+        <li>
+          <span class="publication-title">
+            Title of Your Ph.D. Thesis
+          </span>
+
+          <span class="publication-meta">
+            Ph.D. thesis, University Name, 2024.
+          </span>
+        </li>
+      </ul>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       Footer
+       ========================================================= -->
+
+  <footer class="site-footer">
+
+    <div class="bottom-navigation">
+      <p class="footer-note">
+        Last updated: July 2026
+      </p>
+
+      <a href="#top" aria-label="Go to the top of the page">
+        Top
+      </a>
     </div>
 
-  </div>
-
-  <hr>
-
-  <!-- Current and past positions -->
-
-  <section id="positions" class="page-section">
-
-    <div class="section-title">
-      Current and Past Positions:
-    </div>
-
-    <ul class="position-list">
-
-      <li>
-        <span class="position-date">
-          Since June 2026
-        </span>
-
-        Professor at the
-
-        <a href="#">
-          Department of Computer Science
-        </a>,
-
-        <a href="#">
-          University of Warwick
-        </a>,
-
-        UK.
-      </li>
-
-      <li>
-        <span class="position-date">
-          July 2024 – May 2026
-        </span>
-
-        Assistant Professor at the
-
-        <a href="#">
-          Department of Computer Science
-        </a>,
-
-        <a href="#">
-          University Name
-        </a>,
-
-        Country.
-      </li>
-
-      <li>
-        <span class="position-date">
-          August 2022 – June 2024
-        </span>
-
-        Postdoctoral Researcher at
-
-        <a href="#">
-          Institution Name
-        </a>,
-
-        Country.
-      </li>
-
-    </ul>
-
-  </section>
-
-  <hr>
-
-  <!-- Education -->
-
-  <section id="education" class="page-section">
-
-    <div class="section-title">
-      Education:
-    </div>
-
-    <ul class="education-list">
-
-      <li>
-        <span class="education-date">
-          2024
-        </span>
-
-        Ph.D. in Computer Science,
-
-        <a href="#">
-          University Name
-        </a>.
-        <br>
-
-        Advisor:
-
-        <a href="#">
-          Advisor Name
-        </a>.
-      </li>
-
-      <li>
-        <span class="education-date">
-          2020
-        </span>
-
-        M.Tech. in Computer Science,
-
-        <a href="#">
-          University Name
-        </a>.
-      </li>
-
-      <li>
-        <span class="education-date">
-          2018
-        </span>
-
-        B.Tech. in Computer Science,
-
-        <a href="#">
-          University Name
-        </a>.
-      </li>
-
-    </ul>
-
-  </section>
-
-  <hr>
-
-  <!-- Research interests -->
-
-  <section id="interests" class="page-section">
-
-    <div class="section-title">
-      Research Interests:
-    </div>
-
-    <ul>
-      <li>Graph Algorithms</li>
-    </ul>
-
-  </section>
-
-  <hr>
-
-  <!-- Teaching -->
-
-  <section id="teaching" class="page-section">
-
-    <div class="section-title">
-      Teaching:
-    </div>
-
-    <ul>
-      <li>
-        CDS 303: Theory of Computation
-        (<a href="ToC26.html">Fall 2026</a>)
-      </li>
-
-       <li>
-        CDS 409: Approximation Algorithms
-        (<a href="AprxAlg26.html">Fall 2026</a>)
-      </li>
-    </ul>
-
-  </section>
-
-  <hr>
-
-  <!-- Research publications -->
-
-  <section id="research" class="page-section">
-
-  <div class="section-title">
-    Publications:
-  </div>
-
-  <div class="research-category">
-    Journals
-  </div>
-
-  <ol class="publication-list">
-    <li>
-      <span class="publication-title">
-        <a href="#">
-          Title of Your Journal Paper
-        </a>
-      </span>
-
-      <span class="publication-meta">
-        With Coauthor One, Coauthor Two, and Coauthor Three
-      </span>
-
-      <span class="publication-meta">
-        In <em>Journal Name</em>, 2026.
-        [<a href="#">link</a>]
-      </span>
-    </li>
-  </ol>
-
-  <div class="research-category">
-    Conferences
-  </div>
-
-  <ol class="publication-list">
-    <li>
-      <span class="publication-title">
-        <a href="#">
-          Title of Your Conference Paper
-        </a>
-      </span>
-
-      <span class="publication-meta">
-        With Coauthor One and Coauthor Two
-      </span>
-
-      <span class="publication-meta">
-        Conference Name, 2026.
-        [<a href="#">link</a>]
-      </span>
-    </li>
-  </ol>
-
-  <div class="research-category">
-    Theses
-  </div>
-
-  <ul class="publication-list">
-    <li>
-      <span class="publication-title">
-        Title of Your Ph.D. Thesis
-      </span>
-
-      <span class="publication-meta">
-        Ph.D. thesis, University Name, 2024.
-        [<a href="#">PDF</a>]
-      </span>
-    </li>
-  </ul>
-
-</section>
-
-  <div class="bottom-navigation">
-    <a href="#top" aria-label="Go to the top of the page">Top</a>
-  </div>
+  </footer>
 
 </body>
 </html>
