@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="CDS 303: Theory of Computation, Fall 2026"
+  >
+
+  <title>CDS 303: Theory of Computation</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      background: #ffffff;
+    }
+
+    body {
+      max-width: 1120px;
+      margin: 20px auto 60px;
+      padding: 0 30px;
+      background: #ffffff;
+      color: #282828;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    /*
+      Top area containing the centred course title
+      and navigation tabs on the right
+    */
+    .top-area {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: 25px;
+      padding: 12px 0 14px;
+    }
+
+    /*
+      Course title section
+    */
+    .course-header {
+      grid-column: 2;
+      text-align: center;
+    }
+
+    .course-header h1 {
+      margin: 0 0 7px;
+      color: #1d2c45;
+      font-size: 2.15em;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .course-header h2 {
+      margin: 0;
+      color: #555555;
+      font-size: 1.35em;
+      line-height: 1.2;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /*
+      Top navigation tabs
+    */
+    .top-navigation {
+      grid-column: 3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+      margin: 0;
+      padding-bottom: 1px;
+    }
+
+    .top-navigation a,
+    .top-navigation a:link,
+    .top-navigation a:visited {
+      display: inline-block;
+      padding: 5px 11px;
+      border: 1px solid #7c8795;
+      border-radius: 3px;
+      background: #f4f6f8;
+      color: #1d2c45;
+      font-size: 0.94em;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .top-navigation a:hover,
+    .top-navigation a:focus {
+      border-color: #1d2c45;
+      background: #1d2c45;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /*
+      Horizontal lines
+    */
+    hr {
+      height: 1px;
+      margin: 22px 0;
+      border: 0;
+      border-top: 1px solid #929292;
+    }
+
+    .top-line {
+      margin-top: 0;
+    }
+
+    /*
+      General section styling
+    */
+    section {
+      padding: 2px 0;
+      scroll-margin-top: 15px;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      color: #1d2c45;
+      font-size: 1.25em;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    /*
+      Rectangular/square bullets
+    */
+    ul {
+      margin: 6px 0 12px 30px;
+      padding: 0;
+      list-style-type: square;
+    }
+
+    li {
+      margin: 9px 0;
+      padding-left: 5px;
+    }
+
+    /*
+      Course information
+    */
+    .course-info {
+      margin-left: 30px;
+    }
+
+    .course-info li {
+      padding-left: 7px;
+    }
+
+    .info-label {
+      display: inline-block;
+      min-width: 105px;
+      color: #202020;
+      font-weight: 700;
+    }
+
+    /*
+      General links
+    */
+    a:link {
+      color: #0000cc;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:visited {
+      color: #551a8b;
+    }
+
+    a:hover,
+    a:focus {
+      color: #cc0000;
+    }
+
+    /*
+      Instructor and email links without underline
+    */
+    .no-underline,
+    .no-underline:link,
+    .no-underline:visited,
+    .no-underline:hover,
+    .no-underline:focus {
+      text-decoration: none;
+    }
+
+    /*
+      Textbook title: normal text, not bold or italic
+    */
+    .book-title {
+      color: #8b1e3f;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    /*
+      Lecture entry
+    */
+    .lecture-title {
+      color: #004b87;
+      font-weight: 600;
+    }
+
+    .lecture-date {
+      color: #555555;
+      font-weight: 540;
+    }
+
+    /*
+      Bottom horizontal line and Top tab
+    */
+    .bottom-navigation {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .bottom-line {
+      flex: 1;
+      height: 1px;
+      border-top: 1px solid #929292;
+    }
+
+    .top-tab,
+    .top-tab:link,
+    .top-tab:visited {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid #7c8795;
+      border-radius: 3px;
+      background: #f4f6f8;
+      color: #1d2c45;
+      font-size: 0.94em;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .top-tab:hover,
+    .top-tab:focus {
+      border-color: #1d2c45;
+      background: #1d2c45;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /*
+      Tablet and smaller-screen layout
+    */
+    @media (max-width: 900px) {
+      .top-area {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .course-header {
+        width: 100%;
+        text-align: center;
+      }
+
+      .top-navigation {
+        justify-content: center;
+      }
+    }
+
+    /*
+      Mobile layout
+    */
+    @media (max-width: 650px) {
+      body {
+        margin-top: 12px;
+        padding: 0 18px 40px;
+        font-size: 16px;
+      }
+
+      .top-area {
+        padding: 10px 0 13px;
+      }
+
+      .course-header h1 {
+        font-size: 1.65em;
+      }
+
+      .course-header h2 {
+        font-size: 1.2em;
+      }
+
+      .top-navigation {
+        gap: 6px;
+      }
+
+      .top-navigation a,
+      .top-navigation a:link,
+      .top-navigation a:visited {
+        padding: 5px 9px;
+        font-size: 0.88em;
+      }
+
+      .section-title {
+        font-size: 1.25em;
+      }
+
+      .course-info {
+        margin-left: 24px;
+      }
+
+      .info-label {
+        display: block;
+        min-width: 0;
+        margin-bottom: 1px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <main>
+
+    <!-- Centred course title and navigation tabs -->
+    <div class="top-area">
+
+      <header class="course-header">
+        <h1>CDS 303: Theory of Computation</h1>
+        <h2>Fall 2026</h2>
+      </header>
+
+      <nav class="top-navigation" aria-label="Course navigation">
+        <a href="#references">References</a>
+        <a href="#lectures">Lectures</a>
+      </nav>
+
+    </div>
+
+    <hr class="top-line">
+
+    <!-- Basic course information -->
+    <section aria-label="Course information">
+      <ul class="course-info">
+
+        <li>
+          <span class="info-label">Instructor:</span>
+
+          <a
+            class="no-underline"
+            href="https://sbjana.github.io/"
+          >Satyabrata Jana</a>
+
+          (<a
+            class="no-underline"
+            href="mailto:satyabrataj@iiserbpr.ac.in"
+          >satyabrataj@iiserbpr.ac.in</a>)
+        </li>
+
+        <li>
+          <span class="info-label">Timings:</span>
+          Wednesdays (6:00–7:30 PM)
+        </li>
+
+        <li>
+          <span class="info-label">Venue:</span>
+          hhh
+        </li>
+
+        <li>
+          <span class="info-label">Grading:</span>
+          Major exam (45%), Minor exam (25%),
+          Assignments (20%), Attendance (10%)
+        </li>
+
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Course objectives -->
+    <section id="objectives">
+      <h2 class="section-title">Course Objectives</h2>
+
+      <p>
+        In this course, we will learn algorithms and the fundamental
+        mathematical models of computation.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- Background -->
+    <section id="background">
+      <h2 class="section-title">Background</h2>
+
+      <p>
+        There is no formal prerequisite for this course.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- Textbooks and references -->
+    <section id="references">
+      <h2 class="section-title">Textbooks &amp; References</h2>
+
+      <ul>
+        <li>
+          <span class="book-title">
+            Introduction to the Theory of Computation
+          </span>
+          - Michael Sipser.
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Lectures -->
+    <section id="lectures">
+      <h2 class="section-title">Lectures</h2>
+
+      <ul>
+        <li>
+          <span class="lecture-title">Lecture 1</span>
+          <span class="lecture-date">(01.08.2026):</span>
+          Introduction to the course.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Bottom horizontal line with Top tab -->
+    <div class="bottom-navigation">
+      <div class="bottom-line"></div>
+      <a class="top-tab" href="#top">Top</a>
+    </div>
+
+  </main>
+</body>
+</html>
+
