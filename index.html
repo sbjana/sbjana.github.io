@@ -19,6 +19,8 @@
       --tab-background: #f3f6f8;
       --tab-hover: #e7eff5;
       --tab-border: #b7c3cc;
+      --top-tab-width: 48px;
+      --top-tab-gap: 12px;
     }
 
     html {
@@ -206,8 +208,59 @@
     }
 
     .page-section + .page-section {
+      position: relative;
       padding-top: 26px;
+    }
+
+    .page-section + .page-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: calc(var(--top-tab-width) + var(--top-tab-gap));
       border-top: 1px solid var(--line-color);
+    }
+
+    /*
+      "Top" tabs placed at the right end of section separator lines
+    */
+
+    .section-top-tab:link,
+    .section-top-tab:visited,
+    .footer-top-tab:link,
+    .footer-top-tab:visited {
+      position: absolute;
+      right: 0;
+      top: -14px;
+      z-index: 1;
+      display: inline-block;
+      box-sizing: border-box;
+      width: var(--top-tab-width);
+      padding: 4px 6px;
+      text-align: center;
+      border: 1px solid var(--tab-border);
+      border-radius: 5px;
+      background-color: var(--tab-background);
+      color: #263746;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 1.2;
+      text-decoration: none;
+      transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .section-top-tab:hover,
+    .section-top-tab:focus,
+    .footer-top-tab:hover,
+    .footer-top-tab:focus {
+      border-color: var(--accent-color);
+      background-color: var(--tab-hover);
+      color: var(--accent-color);
+      text-decoration: none;
     }
 
     .section-title {
@@ -328,17 +381,26 @@
     */
 
     .site-footer {
+      position: relative;
       margin-top: 34px;
       padding-top: 16px;
-      border-top: 1px solid var(--line-color);
       color: var(--muted-text);
       font-size: 14px;
+    }
+
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: calc(var(--top-tab-width) + var(--top-tab-gap));
+      border-top: 1px solid var(--line-color);
     }
 
     .bottom-navigation {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 16px;
     }
 
@@ -437,8 +499,9 @@
       }
 
       .top-navigation,
-      .bottom-navigation a {
-        display: none;
+      .section-top-tab,
+      .footer-top-tab {
+        display: none !important;
       }
 
       .profile-photo {
@@ -451,6 +514,11 @@
 
       .page-section {
         break-inside: avoid;
+      }
+
+      .page-section + .page-section::before,
+      .site-footer::before {
+        right: 0;
       }
     }
   </style>
@@ -515,6 +583,7 @@ satyamtma [at] gmail [dot] com</a>
 </ul>
 </section>
 <section class="page-section" id="news">
+<a class="section-top-tab" aria-label="Go to the top of the page" href="#top">Top</a>
 <h2 class="section-title">News</h2>
 <p class="news-text">
         I am  looking for sincere and motivated students and researchers
@@ -524,6 +593,7 @@ satyamtma [at] gmail [dot] com</a>
       </p>
 </section>
 <section class="page-section" id="positions">
+<a class="section-top-tab" aria-label="Go to the top of the page" href="#top">Top</a>
 <h2 class="section-title">Current and Past Positions</h2>
 <ul class="position-list">
 <li>
@@ -559,6 +629,7 @@ satyamtma [at] gmail [dot] com</a>
 </ul>
 </section>
 <section class="page-section" id="education">
+<a class="section-top-tab" aria-label="Go to the top of the page" href="#top">Top</a>
 <h2 class="section-title">Education</h2>
 <ul class="education-list">
 <li><span class="education-date">Aug 2016 - Jul 2021</span>
@@ -573,6 +644,7 @@ satyamtma [at] gmail [dot] com</a>
 </ul>
 </section>
 <section class="page-section" id="teaching">
+<a class="section-top-tab" aria-label="Go to the top of the page" href="#top">Top</a>
 <h2 class="section-title">Teaching</h2>
 <ul>
 <li>CDS 303: Theory of Computation (<a href="ToC26.html">Fall 2026</a>)</li>
@@ -580,6 +652,7 @@ satyamtma [at] gmail [dot] com</a>
 </ul>
 </section>
 <section class="page-section" id="publications">
+<a class="section-top-tab" aria-label="Go to the top of the page" href="#top">Top</a>
 <h2 class="section-title">Publications</h2>
 <div class="research-category">Journals</div>
 <ol class="publication-list" reversed>
@@ -938,9 +1011,9 @@ Method for Polynomials with Two Distinct Roots
 </section>
 </main>
 <footer class="site-footer">
+<a class="footer-top-tab" aria-label="Go to the top of the page" href="#top">Top</a>
 <div class="bottom-navigation">
 <p class="footer-note">Last updated: July 2026</p>
-<a aria-label="Go to the top of the page" href="#top">Top</a>
 </div>
 </footer>
 </body>
