@@ -104,9 +104,7 @@
     }
 
     .top-navigation a:link,
-    .top-navigation a:visited,
-    .bottom-navigation a:link,
-    .bottom-navigation a:visited {
+    .top-navigation a:visited {
       display: inline-block;
       padding: 6px 12px;
       border: 1px solid var(--tab-border);
@@ -125,9 +123,7 @@
     }
 
     .top-navigation a:hover,
-    .top-navigation a:focus,
-    .bottom-navigation a:hover,
-    .bottom-navigation a:focus {
+    .top-navigation a:focus {
       border-color: var(--accent-color);
       background-color: var(--tab-hover);
       color: var(--accent-color);
@@ -264,7 +260,6 @@
       width: 24px;
       height: 24px;
     }
-
 
     /*
       Sections
@@ -515,6 +510,41 @@
       margin: 0;
     }
 
+    .footer-social-link:link,
+    .footer-social-link:visited {
+      position: absolute;
+      top: 6px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: none;
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .footer-social-link:hover,
+    .footer-social-link:focus {
+      opacity: 0.84;
+    }
+
+    .footer-facebook-link {
+      right: calc(var(--top-tab-width) + var(--top-tab-gap));
+    }
+
+    .footer-instagram-link {
+      right: calc(var(--top-tab-width) + var(--top-tab-gap) + 32px);
+    }
+
+    .footer-social-icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
 
     /*
       Responsive layout
@@ -624,6 +654,7 @@
 
       .top-navigation,
       .academic-link-icon,
+      .footer-social-link,
       .section-top-tab,
       .footer-top-tab {
         display: none !important;
@@ -800,7 +831,7 @@
             />
             <span>Google Scholar</span>
           </a>
-
+          
            <a
             href="https://dblp.uni-trier.de/pid/179/2273.html"
             rel="noopener noreferrer"
@@ -812,7 +843,7 @@
               class="academic-link-icon"
               src="logos/dblp.jpg"
             />
-            <span>DBLP</span>
+            <span>dblp</span>
           </a>
 
           <a
@@ -2600,6 +2631,38 @@
     href="#top"
   >
     Top
+  </a>
+
+  <a
+    aria-label="Instagram profile"
+    class="footer-social-link footer-instagram-link"
+    href="https://www.instagram.com/sa_ajna/"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Instagram"
+  >
+    <img
+      alt=""
+      aria-hidden="true"
+      class="footer-social-icon"
+      src="logos/instagram.svg"
+    />
+  </a>
+
+  <a
+    aria-label="Facebook profile"
+    class="footer-social-link footer-facebook-link"
+    href="https://www.facebook.com/satyabrata.jana1"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Facebook"
+  >
+    <img
+      alt=""
+      aria-hidden="true"
+      class="footer-social-icon"
+      src="logos/facebook.svg"
+    />
   </a>
 
   <div class="bottom-navigation">
