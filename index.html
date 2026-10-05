@@ -203,13 +203,66 @@
     }
 
     .academic-links {
-      margin-top: 12px;
-      font-size: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 9px;
+      max-width: 760px;
+      margin-top: 14px;
+      font-size: 14px;
     }
 
-    .academic-links span {
-      margin: 0 7px;
-      color: #999999;
+    .academic-links a:link,
+    .academic-links a:visited {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      box-sizing: border-box;
+      min-height: 35px;
+      padding: 5px 11px 5px 7px;
+      border: 1px solid #ccd5dc;
+      border-radius: 18px;
+      background-color: #fbfcfd;
+      color: #304858;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: bold;
+      line-height: 1;
+      white-space: nowrap;
+      box-shadow: 0 1px 2px rgba(20, 44, 62, 0.06);
+      transition:
+        transform 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .academic-links a:hover,
+    .academic-links a:focus {
+      transform: translateY(-1px);
+      border-color: #8ea7b9;
+      background-color: #f3f7fa;
+      color: var(--link-hover);
+      box-shadow: 0 3px 7px rgba(20, 44, 62, 0.11);
+    }
+
+    .academic-link-icon {
+      display: block;
+      flex: 0 0 23px;
+      width: 23px;
+      height: 23px;
+      object-fit: contain;
+    }
+
+    .academic-link-icon--linkedin {
+      width: 25px;
+      height: 21px;
+      margin-left: -1px;
+    }
+
+    .academic-link-icon--iiser {
+      width: 24px;
+      height: 24px;
     }
 
 
@@ -526,8 +579,13 @@
         min-width: 0;
       }
 
-      .academic-links span {
-        margin: 0 4px;
+      .academic-links {
+        gap: 7px;
+      }
+
+      .academic-links a:link,
+      .academic-links a:visited {
+        padding-right: 10px;
       }
 
       ul,
@@ -565,6 +623,7 @@
       }
 
       .top-navigation,
+      .academic-link-icon,
       .section-top-tab,
       .footer-top-tab {
         display: none !important;
@@ -709,57 +768,96 @@
         </div>
 
 
-        <div class="academic-links">
+        <nav
+          aria-label="Academic profiles and curriculum vitae"
+          class="academic-links"
+        >
 
           <a
             href="CV.pdf"
             rel="noopener noreferrer"
             target="_blank"
           >
-            CV
+            <img
+              alt=""
+              aria-hidden="true"
+              class="academic-link-icon"
+              src="logos/cv.svg"
+            />
+            <span>CV</span>
           </a>
-
-          <span aria-hidden="true">·</span>
 
           <a
             href="https://scholar.google.co.in/citations?user=atnXslUAAAAJ&hl=en&oi=ao"
             rel="noopener noreferrer"
             target="_blank"
           >
-            Google Scholar
+            <img
+              alt=""
+              aria-hidden="true"
+              class="academic-link-icon"
+              src="logos/google-scholar.svg"
+            />
+            <span>Google Scholar</span>
           </a>
 
-          <span aria-hidden="true">·</span>
+          <a
+            href="https://www.researchgate.net/profile/Satyabrata-Jana"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              class="academic-link-icon"
+              src="logos/researchgate.svg"
+            />
+            <span>ResearchGate</span>
+          </a>
 
           <a
             href="https://dblp.uni-trier.de/pid/179/2273.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-            DBLP
+            <img
+              alt=""
+              aria-hidden="true"
+              class="academic-link-icon"
+              src="logos/dblp.jpg"
+            />
+            <span>DBLP</span>
           </a>
-
-          <span aria-hidden="true">·</span>
 
           <a
             href="https://www.linkedin.com/in/satyabrata-jana-b67687128/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            Linkedin
+            <img
+              alt=""
+              aria-hidden="true"
+              class="academic-link-icon academic-link-icon--linkedin"
+              src="logos/linkedin.png"
+            />
+            <span>LinkedIn</span>
           </a>
-
-          <span aria-hidden="true">·</span>
 
           <a
             href="https://www.iiserbpr.ac.in/people/profile/satyabrataj"
             rel="noopener noreferrer"
             target="_blank"
           >
-            IISER
+            <img
+              alt=""
+              aria-hidden="true"
+              class="academic-link-icon academic-link-icon--iiser"
+              src="logos/iiser-berhampur.png"
+            />
+            <span>IISER Berhampur</span>
           </a>
 
-        </div>
+        </nav>
 
       </div>
 
