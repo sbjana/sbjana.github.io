@@ -448,6 +448,29 @@
       margin-top: 2px;
     }
 
+    .publication-journal {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 5px;
+      line-height: 1.3;
+    }
+
+   .journal-cover {
+      width: 18px;
+      height: 24px;
+      flex: 0 0 18px;
+      object-fit: cover;
+      border: 1px solid #c7cfd5;
+      border-radius: 2px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(33, 47, 58, 0.16);
+    }
+
+    .journal-citation {
+      min-width: 0;
+    }
+
     .publication-note {
       display: block;
       margin-top: 3px;
@@ -654,6 +677,7 @@
 
       .top-navigation,
       .academic-link-icon,
+      .journal-cover,
       .footer-social-link,
       .section-top-tab,
       .footer-top-tab {
@@ -831,20 +855,6 @@
             />
             <span>Google Scholar</span>
           </a>
-          
-           <a
-            href="https://dblp.uni-trier.de/pid/179/2273.html"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img
-              alt=""
-              aria-hidden="true"
-              class="academic-link-icon"
-              src="logos/dblp.jpg"
-            />
-            <span>DBLP</span>
-          </a>
 
           <a
             href="https://www.researchgate.net/profile/Satyabrata-Jana"
@@ -855,12 +865,24 @@
               alt=""
               aria-hidden="true"
               class="academic-link-icon"
-              src="logos/RG.svg"
+              src="logos/researchgate.svg"
             />
             <span>ResearchGate</span>
           </a>
 
-         
+          <a
+            href="https://dblp.uni-trier.de/pid/179/2273.html"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              class="academic-link-icon"
+              src="logos/dblp.svg"
+            />
+            <span>DBLP</span>
+          </a>
 
           <a
             href="https://www.linkedin.com/in/satyabrata-jana-b67687128/"
@@ -873,7 +895,7 @@
               class="academic-link-icon academic-link-icon--linkedin"
               src="logos/linkedin.png"
             />
-            <span>Linkedin</span>
+            <span>LinkedIn</span>
           </a>
 
           <a
@@ -2067,8 +2089,9 @@
           S. Jana, Saket Saurabh
         </span>
 
-        <span class="publication-meta">
-          <em>ACM Transactions on Computation Theory</em> 2026
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/acm.png" width="28"/>
+          <span class="journal-citation"><em>ACM Transactions on Computation Theory</em> 2026</span>
         </span>
 
       </li>
@@ -2095,8 +2118,9 @@
           Akanksha Agrawal, S. Jana, Abhishek Sahu
         </span>
 
-        <span class="publication-meta">
-          <em>Discrete Mathematics</em> 2026
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/dm.jpg" width="28"/>
+          <span class="journal-citation"><em>Discrete Mathematics</em> 2026</span>
         </span>
 
       </li>
@@ -2124,8 +2148,9 @@
           Saket Saurabh
         </span>
 
-        <span class="publication-meta">
-          <em>Journal of Computer and System Sciences</em> 2026
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/jcss.gif" width="28"/>
+          <span class="journal-citation"><em>Journal of Computer and System Sciences</em> 2026</span>
         </span>
 
       </li>
@@ -2152,8 +2177,9 @@
           S. Jana, Lawqueen Kanesh, Madhumita Kundu, Saket Saurabh
         </span>
 
-        <span class="publication-meta">
-          <em>Journal of Computer and System Sciences</em> 2026
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/jcss.gif" width="28"/>
+          <span class="journal-citation"><em>Journal of Computer and System Sciences</em> 2026</span>
         </span>
 
       </li>
@@ -2181,8 +2207,9 @@
           Saket Saurabh
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2026
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2026</span>
         </span>
 
       </li>
@@ -2209,8 +2236,9 @@
           Václav Blažej, S. Jana, Peter Strulo
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2026
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2026</span>
         </span>
 
       </li>
@@ -2237,8 +2265,9 @@
           Václav Blažej, S. Jana, M. S. Ramanujan, Peter Strulo
         </span>
 
-        <span class="publication-meta">
-          <em>Algorithmica</em> 2025
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/algo.png" width="28"/>
+          <span class="journal-citation"><em>Algorithmica</em> 2025</span>
         </span>
 
       </li>
@@ -2266,8 +2295,9 @@
           S. Jana, Saket Saurabh
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2025
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2025</span>
         </span>
 
       </li>
@@ -2294,8 +2324,9 @@
           Ankit Abhinav, S. Jana, Abhishek Sahu
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2025
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2025</span>
         </span>
 
       </li>
@@ -2323,8 +2354,9 @@
           Saket Saurabh, Shaily Verma
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2024
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2024</span>
         </span>
 
       </li>
@@ -2351,8 +2383,9 @@
           S. Jana, Anil Maheshwari, Saeed Mehrabi, Sasanka Roy
         </span>
 
-        <span class="publication-meta">
-          <em>International Journal of Computational Geometry and Applications</em> 2023
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/ijcga.png" width="28"/>
+          <span class="journal-citation"><em>International Journal of Computational Geometry and Applications</em> 2023</span>
         </span>
 
       </li>
@@ -2380,8 +2413,9 @@
           S. Jana, Abhishek Sahu
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2023
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2023</span>
         </span>
 
       </li>
@@ -2408,8 +2442,9 @@
           S. Jana, Anil Maheshwari, Sasanka Roy
         </span>
 
-        <span class="publication-meta">
-          <em>Computational Geometry</em> 2022
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/cgta.jpg" width="28"/>
+          <span class="journal-citation"><em>Computational Geometry</em> 2022</span>
         </span>
 
       </li>
@@ -2436,8 +2471,9 @@
           Jammigumpula Ajay, S. Jana, Sasanka Roy
         </span>
 
-        <span class="publication-meta">
-          <em>Discrete Applied Mathematics</em> 2022
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/dam.jpg" width="28"/>
+          <span class="journal-citation"><em>Discrete Applied Mathematics</em> 2022</span>
         </span>
 
       </li>
@@ -2465,8 +2501,9 @@
           Joseph SB Mitchell, Supantha Pandit, Sasanka Roy
         </span>
 
-        <span class="publication-meta">
-          <em>Discrete Applied Mathematics</em> 2022
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/dam.jpg" width="28"/>
+          <span class="journal-citation"><em>Discrete Applied Mathematics</em> 2022</span>
         </span>
 
       </li>
@@ -2493,8 +2530,9 @@
           Sujoy Bhore, S. Jana, Supantha Pandit, Sasanka Roy
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2022
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2022</span>
         </span>
 
       </li>
@@ -2521,8 +2559,9 @@
           S. Jana, Supantha Pandit
         </span>
 
-        <span class="publication-meta">
-          <em>Theoretical Computer Science</em> 2020
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/tcs.jpg" width="28"/>
+          <span class="journal-citation"><em>Theoretical Computer Science</em> 2020</span>
         </span>
 
       </li>
@@ -2549,8 +2588,9 @@
           Mathew C. Francis, Dalu Jacob, S. Jana
         </span>
 
-        <span class="publication-meta">
-          <em>SIAM Journal on Discrete Mathematics</em> 2018
+        <span class="publication-meta publication-journal">
+          <img alt="" aria-hidden="true" class="journal-cover" decoding="async" height="37" loading="lazy" src="logos/siam.jpeg" width="28"/>
+          <span class="journal-citation"><em>SIAM Journal on Discrete Mathematics</em> 2018</span>
         </span>
 
       </li>
